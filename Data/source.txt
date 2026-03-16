@@ -1,4 +1,4 @@
-Alan Gardiner's List of Hieroglyphic Signs.xlsx     (Data-set file)
+gardiner_signs.xlsx     (Data-set file)
 
 from  ====> " https://github.com/omnika-datastore/alan-gardiner-list-of-hieroglyphic-signs " <===
 
@@ -7,7 +7,7 @@ from  ====> " https://github.com/omnika-datastore/alan-gardiner-list-of-hierogly
 ====================================================================================
 ====================================================================================
 
-gardiner_sign_list_full.csv  (Latest Version of Alan Gardiner's)
+Update_gardiner_sign.csv  (Latest Version of Alan Gardiner's)
 
 =======> This dataset is a cleaned and modified version of 
 "Alan Gardiner's List of Hieroglyphic Signs" originally obtained from:
