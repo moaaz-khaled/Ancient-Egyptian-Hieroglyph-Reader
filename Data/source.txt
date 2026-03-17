@@ -6,14 +6,3 @@ from  ====> " https://github.com/omnika-datastore/alan-gardiner-list-of-hierogly
 
 ====================================================================================
 ====================================================================================
-
-Update_gardiner_sign.csv  (Latest Version of Alan Gardiner's)
-
-=======> This dataset is a cleaned and modified version of 
-"Alan Gardiner's List of Hieroglyphic Signs" originally obtained from:
-
-https://github.com/omnika-datastore/alan-gardiner-list-of-hieroglyphic-signs
-
-The data was processed to fix formatting issues, remove duplicated codes, 
-and produce a structured CSV file suitable for automatic transliteration 
-mapping in the NLP pipeline. <=======

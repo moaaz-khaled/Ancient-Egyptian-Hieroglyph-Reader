@@ -1,0 +1,9 @@
+Note
+
+All data located under the path:
+
+Test/Data
+
+has been generated using AI-based tools. The generated content has been carefully reviewed, validated, and refined by the graduation project team to ensure accuracy and consistency.
+
+The team takes full responsibility for the quality and reliability of this data within the scope of the project.
