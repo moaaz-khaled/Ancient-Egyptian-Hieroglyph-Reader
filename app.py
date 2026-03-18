@@ -9,7 +9,7 @@ import json
 from models import HieroglyphNLPPipeline
 
 # Initialize Flask app
-app = Flask(__name__, static_folder='.')
+app = Flask(__name__, static_folder='frontend', static_url_path='')
 CORS(app)
 
 # Global pipeline instance (initialized once on startup)
@@ -121,17 +121,16 @@ def get_examples():
 
 @app.route('/<path:filename>')
 def serve_static(filename):
-    """Serve static files (HTML, CSS, JS)"""
     try:
-        return send_from_directory('.', filename)
+        return send_from_directory('frontend', filename)
     except:
-        return send_from_directory('.', 'index.html')
+        return send_from_directory('frontend', 'index.html')
 
 
 @app.route('/')
 def serve_index():
     """Serve main HTML"""
-    return send_from_directory('.', 'index.html')
+    return send_from_directory('frontend', 'index.html')
 
 
 # ═══════════════════════════════════════════════════════════════════════
