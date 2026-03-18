@@ -1,2 +1,8 @@
 G17 ,  N35 , D21
 m   ,  n   , r 
+
+
+mri => Love (From "" intention_dataset.csv "")
+
+G17 , D21 , (M17 , M18) 
+m   ,  r  ,  i
