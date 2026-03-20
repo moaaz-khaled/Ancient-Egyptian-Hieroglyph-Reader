@@ -1,52 +1,16 @@
 """
 🏺 Hieroglyph NLP Pipeline - Core Models & Functions
 Transliteration → Dictionary → spaCy → Arabic Translation → Sentiment
-
-Translation Model: ByteDance-Seed/Seed-X-PPO-7B
-- بيشتغل local على GPU (NVIDIA)
-- bfloat16 / float16 — الأكثر استقراراً وجودة
-- الـ prompt لازم ينتهي بـ <ar> حسب الـ docs
 """
 
 import re
-import os
 import pandas as pd
 import spacy
 import torch
-import numpy as np
-from transformers import (
-    AutoTokenizer,
-    AutoModelForCausalLM,
-    PreTrainedTokenizerFast,
-    AutoModelForSequenceClassification,
-)
+from transformers import AutoModelForSeq2SeqLM, AutoTokenizer
+from transformers import AutoModelForSequenceClassification
 from collections import defaultdict
-
-
-# ═══════════════════════════════════════════════════════════════════════
-# DEVICE DETECTION
-# ═══════════════════════════════════════════════════════════════════════
-
-DEVICE = 'cuda' if torch.cuda.is_available() else 'cpu'
-if DEVICE == 'cuda':
-    gpu_name = torch.cuda.get_device_name(0)
-    vram_gb  = torch.cuda.get_device_properties(0).total_memory / 1e9
-    print(f'🖥️  GPU detected: {gpu_name} ({vram_gb:.1f} GB VRAM)')
-    # اختار الـ dtype الأنسب حسب الـ VRAM
-    COMPUTE_DTYPE = torch.bfloat16 if torch.cuda.is_bf16_supported() else torch.float16
-else:
-    print('⚠️  No GPU found — running on CPU (slow)')
-    COMPUTE_DTYPE = torch.float32
-
-
-# ═══════════════════════════════════════════════════════════════════════
-# SEED-X MODEL ID
-# ═══════════════════════════════════════════════════════════════════════
-
-SEED_X_MODEL_ID = 'ByteDance-Seed/Seed-X-PPO-7B'
-
-
-# monkey-patch مش محتاجها local — كانت بس لـ Kaggle
+import os
 
 
 # ═══════════════════════════════════════════════════════════════════════
@@ -54,6 +18,7 @@ SEED_X_MODEL_ID = 'ByteDance-Seed/Seed-X-PPO-7B'
 # ═══════════════════════════════════════════════════════════════════════
 
 def load_gardiner_signs(csv_path='Test/Data/Update_gardiner_sign.csv'):
+    """Load Gardiner sign database from CSV"""
     try:
         df = pd.read_csv(csv_path)
         gardiner_map = {}
@@ -63,8 +28,8 @@ def load_gardiner_signs(csv_path='Test/Data/Update_gardiner_sign.csv'):
                 continue
             gardiner_map[code] = {
                 'phonetic': str(row['phonetic']).strip() if pd.notna(row['phonetic']) else '',
-                'meaning':  str(row['meaning']).strip()  if pd.notna(row['meaning'])  else '',
-                'unicode':  str(row['unicode']).strip()  if pd.notna(row['unicode'])  else '',
+                'meaning': str(row['meaning']).strip() if pd.notna(row['meaning']) else '',
+                'unicode': str(row['unicode']).strip() if pd.notna(row['unicode']) else '',
             }
         print(f'✅ Gardiner Sign List loaded: {len(gardiner_map)} signs')
         return gardiner_map
@@ -78,6 +43,7 @@ def load_gardiner_signs(csv_path='Test/Data/Update_gardiner_sign.csv'):
 # ═══════════════════════════════════════════════════════════════════════
 
 def load_egyptian_dictionary(csv_path='Test/Data/egyptian_dictionary.csv'):
+    """Load Egyptian-English dictionary from CSV"""
     try:
         df_dict = pd.read_csv(csv_path)
         _raw = defaultdict(list)
@@ -101,21 +67,22 @@ def load_egyptian_dictionary(csv_path='Test/Data/egyptian_dictionary.csv'):
 # ═══════════════════════════════════════════════════════════════════════
 
 def load_intention_dataset(csv_path='Test/Data/intention_dataset.csv'):
+    """Load intention dataset from CSV"""
     try:
         df_intent = pd.read_csv(csv_path)
         intention_map = {}
         for _, row in df_intent.iterrows():
             intent_en = str(row['intention_en']).strip()
             intent_ar = str(row['intention_ar']).strip()
-            keywords  = [kw.strip().lower() for kw in str(row['keywords']).split(',')]
+            keywords = [kw.strip().lower() for kw in str(row['keywords']).split(',')]
             intention_map[intent_en] = {
-                'arabic':   intent_ar,
+                'arabic': intent_ar,
                 'keywords': set(keywords),
             }
         print(f'✅ Intention dataset loaded: {len(intention_map)} intentions')
         return intention_map
     except Exception as e:
-        print(f'⚠️  Intention dataset not loaded: {e}')
+        print(f'⚠️  Warning: Intention dataset not loaded: {e}')
         return {}
 
 
@@ -124,6 +91,7 @@ def load_intention_dataset(csv_path='Test/Data/intention_dataset.csv'):
 # ═══════════════════════════════════════════════════════════════════════
 
 def load_spacy_model():
+    """Load spaCy English model"""
     try:
         nlp = spacy.load('en_core_web_sm')
         print('✅ spaCy model loaded')
@@ -131,95 +99,83 @@ def load_spacy_model():
     except OSError:
         print('⚠️  spaCy model not found. Installing...')
         os.system('python -m spacy download en_core_web_sm')
-        return spacy.load('en_core_web_sm')
+        nlp = spacy.load('en_core_web_sm')
+        return nlp
 
 
 def load_translation_model():
-    """
-    تحميل Seed-X-PPO-7B — GPU 6.4GB + CPU RAM offload
-    """
-    print(f'🔄 Loading {SEED_X_MODEL_ID} ({COMPUTE_DTYPE}) ...')
-    print('    GPU: 6.4GB → الموديل هيتوزع على GPU + CPU RAM تلقائي')
-    print('    (أول مرة: بياخد 3-5 دقايق — من الـ cache بيبقى ثواني)')
-
+    print('🔄 Loading NLLB translation model...')
     try:
-        tokenizer = PreTrainedTokenizerFast.from_pretrained(
-            SEED_X_MODEL_ID,
-            trust_remote_code=True,
-        )
-        if tokenizer.pad_token is None:
-            tokenizer.pad_token = tokenizer.eos_token
-
-        # max_memory: حط أكتر حاجة على GPU، الباقي على CPU RAM
-        max_memory = {
-            0: '5GiB',       # GPU  — نسيب 1.4GB buffer
-            'cpu': '20GiB',  # CPU RAM — عندك 32GB
-        }
-
-        model = AutoModelForCausalLM.from_pretrained(
-            SEED_X_MODEL_ID,
-            dtype=COMPUTE_DTYPE,
-            device_map='auto',
-            max_memory=max_memory,
-            trust_remote_code=True,
-            low_cpu_mem_usage=True,
-        )
-        model.eval()
-
-        # اطبع توزيع الـ layers على GPU/CPU
-        if hasattr(model, 'hf_device_map'):
-            devices = set(str(v) for v in model.hf_device_map.values())
-            print(f'✅ {SEED_X_MODEL_ID} loaded — layers on: {devices}')
-        else:
-            print(f'✅ {SEED_X_MODEL_ID} loaded')
-
-        return model, tokenizer
-
+        from transformers import AutoModelForSeq2SeqLM, AutoTokenizer
+        
+        NLLB_MODEL = 'facebook/nllb-200-distilled-600M'
+        ar_tokenizer = AutoTokenizer.from_pretrained(NLLB_MODEL)
+        ar_model = AutoModelForSeq2SeqLM.from_pretrained(NLLB_MODEL)
+        ar_model.eval()
+        
+        print('✅ NLLB model loaded')
+        return ar_model, ar_tokenizer, 'arb_Arab'
+        
     except Exception as e:
-        import traceback
-        print(f'❌ Translation model failed:')
-        traceback.print_exc()
-        return None, None
+        print(f'❌ Error: {e}')
+        return None, None, None
 
 
 def load_sentiment_model():
-    """
-    Sentiment model — على CPU عشان يسيب VRAM كله لـ Seed-X
-    """
+    """Load Twitter RoBERTa sentiment model - Optional"""
     try:
-        print('🔄 Loading sentiment model (CPU)...')
+        import os
+        free_space_mb = 500  # Estimate
+        if hasattr(os, 'statvfs'):
+            stats = os.statvfs(os.path.expanduser("~/.cache"))
+            free_space_mb = stats.f_bavail * stats.f_frsize // (1024*1024)
+        
+        if free_space_mb < 600:
+            print(f'⚠️  Sentiment model skipped (disk space: {free_space_mb}MB < 600MB needed)')
+            return None, None
+            
+        print('🔄 Loading sentiment model...')
         model_name = 'cardiffnlp/twitter-roberta-base-sentiment'
-        tokenizer  = AutoTokenizer.from_pretrained(model_name)
-        model      = AutoModelForSequenceClassification.from_pretrained(model_name)
-        model      = model.to('cpu')
+        tokenizer = AutoTokenizer.from_pretrained(model_name, trust_remote_code=True, timeout=10)
+        model = AutoModelForSequenceClassification.from_pretrained(model_name, trust_remote_code=True, timeout=10)
         model.eval()
-        print('✅ Sentiment model loaded (CPU)')
+        print('✅ Sentiment model loaded')
         return model, tokenizer
     except Exception as e:
-        print(f'⚠️  Sentiment model failed: {str(e)[:80]}')
+        print(f'⚠️  Sentiment model not available (optional): {str(e)[:50]}...')
         return None, None
 
 
 # ═══════════════════════════════════════════════════════════════════════
-# 5️⃣  TRANSLITERATION ENGINE
+# 5️⃣  TRANSLITERATION ENGINE + SPACY SENTENCE BUILDER (CELL 4)
 # ═══════════════════════════════════════════════════════════════════════
 
 def extract_core_meaning(meanings):
-    text  = meanings[0] if isinstance(meanings, list) else str(meanings)
+    """Extract the primary meaning from a list"""
+    if isinstance(meanings, list):
+        text = meanings[0]
+    else:
+        text = str(meanings)
     first = re.split(r'[/|]', text)[0].strip()
-    return re.sub(r'^be ', '', first).strip().lower()
+    first = re.sub(r'^be ', '', first).strip()
+    return first.lower()
 
 
 def build_sentence_spacy(core_meanings, nlp_spacy):
+    """
+    Use spaCy POS tagger to build grammatically correct sentences
+    ['name', 'sun'] -> 'my name is sun'
+    """
     if not core_meanings:
         return ''
     if len(core_meanings) == 1:
         return core_meanings[0]
 
-    doc   = nlp_spacy(' '.join(core_meanings))
+    text = ' '.join(core_meanings)
+    doc = nlp_spacy(text)
     nouns = [t.text for t in doc if t.pos_ in ('NOUN', 'PROPN')]
     verbs = [t.text for t in doc if t.pos_ == 'VERB']
-    adjs  = [t.text for t in doc if t.pos_ == 'ADJ']
+    adjs = [t.text for t in doc if t.pos_ == 'ADJ']
 
     possession = {'name', 'son', 'daughter', 'house', 'heart',
                   'brother', 'sister', 'father', 'mother', 'lord'}
@@ -228,17 +184,28 @@ def build_sentence_spacy(core_meanings, nlp_spacy):
         return f'{verbs[0]} the {nouns[0]}'
     if len(nouns) >= 2:
         n1, n2 = nouns[0], nouns[1]
-        return f'my {n1} is {n2}' if n1.lower() in possession else f'{n1} of {n2}'
+        if n1.lower() in possession:
+            return f'my {n1} is {n2}'
+        return f'{n1} of {n2}'
     if nouns and adjs:
         return f'the {adjs[0]} {nouns[0]}'
     if adjs:
         return f'it is {adjs[0]}'
-    return ' '.join(core_meanings)
+    return text
 
 
 def transliterate(gardiner_codes, gardiner_map, egypt_dict, nlp_spacy):
-    codes         = [c.lower().strip() for c in gardiner_codes]
-    phonetics, glyphs, sign_meanings, unknown = [], [], [], []
+    """
+    Full transliteration pipeline:
+    1. Map Gardiner codes to phonetics
+    2. Dictionary lookup (greedy matching)
+    3. spaCy sentence building
+    """
+    codes = [c.lower().strip() for c in gardiner_codes]
+    phonetics = []
+    glyphs = []
+    sign_meanings = []
+    unknown = []
 
     for code in codes:
         if code in gardiner_map:
@@ -253,219 +220,255 @@ def transliterate(gardiner_codes, gardiner_map, egypt_dict, nlp_spacy):
             unknown.append(code)
 
     ph_clean = [p for p in phonetics if p and p != '?']
-    full     = ''.join(ph_clean)
+    full = ''.join(ph_clean)
 
-    token_results, core_meanings = [], []
+    # Greedy multi-phoneme matching
+    token_results = []
+    core_meanings = []
     i = 0
     while i < len(ph_clean):
         matched = False
         for length in range(min(4, len(ph_clean) - i), 0, -1):
             combined = ''.join(ph_clean[i:i+length])
             if combined in egypt_dict:
-                ml   = egypt_dict[combined]
-                core = extract_core_meaning(ml)
-                token_results.append({'phonetic': combined, 'meaning': ' | '.join(ml), 'core': core, 'found': True})
+                meanings_list = egypt_dict[combined]
+                meaning_str = ' | '.join(meanings_list)
+                core = extract_core_meaning(meanings_list)
+                token_results.append({
+                    'phonetic': combined,
+                    'meaning': meaning_str,
+                    'core': core,
+                    'found': True
+                })
                 core_meanings.append(core)
                 i += length
                 matched = True
                 break
         if not matched:
-            token_results.append({'phonetic': ph_clean[i], 'meaning': f'[{ph_clean[i]}]', 'core': ph_clean[i], 'found': False})
+            ph = ph_clean[i]
+            token_results.append({
+                'phonetic': ph,
+                'meaning': f'[{ph}]',
+                'core': ph,
+                'found': False
+            })
             i += 1
 
-    candidates = [full] if full else []
+    # Sliding window assembly for finding complete words
+    assembly_candidates = []
+    if full:
+        assembly_candidates.append(full)
     for size in range(len(ph_clean), 0, -1):
         for start in range(len(ph_clean) - size + 1):
-            w = ''.join(ph_clean[start:start+size])
-            if w and w not in candidates:
-                candidates.append(w)
+            window = ''.join(ph_clean[start:start+size])
+            if window and window not in assembly_candidates:
+                assembly_candidates.append(window)
 
     found_words = []
-    for c in candidates:
-        if c in egypt_dict:
-            ml = egypt_dict[c]
+    for candidate in assembly_candidates:
+        if candidate in egypt_dict:
+            meanings_list = egypt_dict[candidate]
+            meaning_str = ' | '.join(meanings_list)
             found_words.append({
-                'transliteration': c,
-                'meaning':         ' | '.join(ml),
-                'confidence':      'high' if c == full else 'partial',
+                'transliteration': candidate,
+                'meaning': meaning_str,
+                'confidence': 'high' if candidate == full else 'partial',
             })
 
     high = [w for w in found_words if w['confidence'] == 'high']
-    best = high[0] if high else (found_words[0] if found_words else None)
+    part = [w for w in found_words if w['confidence'] == 'partial']
+    best = high[0] if high else (part[0] if part else None)
+    
+    sentence = build_sentence_spacy(core_meanings, nlp_spacy)
 
     return {
-        'input_codes':   codes,
-        'glyphs':        glyphs,
-        'glyph_str':     ' '.join(glyphs),
-        'per_sign':      list(zip(codes, phonetics, sign_meanings)),
-        'phonetics':     phonetics,
-        'phonetic_str':  ' '.join(ph_clean),
-        'assembled':     full,
+        'input_codes': codes,
+        'glyphs': glyphs,
+        'glyph_str': ' '.join(glyphs),
+        'per_sign': list(zip(codes, phonetics, sign_meanings)),
+        'phonetics': phonetics,
+        'phonetic_str': ' '.join(ph_clean),
+        'assembled': full,
         'token_results': token_results,
-        'found_words':   found_words,
+        'found_words': found_words,
         'unknown_codes': unknown,
-        'best_meaning':  best['meaning'] if best else None,
-        'sentence':      build_sentence_spacy(core_meanings, nlp_spacy),
+        'best_meaning': best['meaning'] if best else None,
+        'sentence': sentence,
         'core_meanings': core_meanings,
     }
 
 
 # ═══════════════════════════════════════════════════════════════════════
-# 6️⃣  TRANSLATION — Seed-X-PPO-7B
+# 6️⃣  TRANSLATION (CELL 5)
 # ═══════════════════════════════════════════════════════════════════════
 
-def translate_to_arabic(english_text, trans_model, trans_tokenizer, target_lang='ar'):
-    """
-    ترجمة إنجليزي → عربي بـ Seed-X-PPO-7B
-
-    الـ prompt الصح حسب الـ docs:
-      "Translate the following English text into Arabic:\n{text} <ar>"
-    """
+def translate_to_arabic(english_text, ar_model, ar_tokenizer, lang_code=None):
     if not english_text or english_text.startswith('['):
         return ''
-    if trans_model is None or trans_tokenizer is None:
-        return ''
-
-    prompt = (
-        f'Translate the following English text into Arabic:\n'
-        f'{english_text} <{target_lang}>'
-    )
-
-    try:
-        inputs = trans_tokenizer(prompt, return_tensors='pt')
-        inputs.pop('token_type_ids', None)
-
-        device = next(trans_model.parameters()).device
-        inputs = {k: v.to(device) for k, v in inputs.items()}
-
-        with torch.no_grad():
-            outputs = trans_model.generate(
-                **inputs,
-                max_new_tokens=128,
-                do_sample=False,
-                pad_token_id=trans_tokenizer.eos_token_id,
-                eos_token_id=trans_tokenizer.eos_token_id,
-                use_cache=True,
-            )
-
-        input_len = inputs['input_ids'].shape[1]
-        arabic    = trans_tokenizer.decode(outputs[0][input_len:], skip_special_tokens=True).strip()
-        return arabic if arabic else english_text
-
-    except Exception as e:
-        print(f'❌ Translation failed: {str(e)[:100]}')
+    if ar_model is None or ar_tokenizer is None:
+        print(f'⚠️  Translation skipped: model={ar_model is not None}, tokenizer={ar_tokenizer is not None}')
         return english_text
+    try:
+        inputs = ar_tokenizer(
+            english_text,
+            return_tensors='pt',
+            truncation=True,
+            max_length=128,
+        )
+        with torch.no_grad():
+            translated = ar_model.generate(
+                **inputs,
+                forced_bos_token_id=ar_tokenizer.convert_tokens_to_ids('arb_Arab'),
+                max_new_tokens=60,
+                num_beams=5,
+                no_repeat_ngram_size=3,
+                repetition_penalty=1.5,
+            )
+        result = ar_tokenizer.decode(translated[0], skip_special_tokens=True)
+        print(f'🔄 Translated: "{english_text}" → "{result}"')
+        return result
+    except Exception as e:
+        print(f'❌ Translation error: {e}')
+        return f'[error: {e}]'
 
 
 # ═══════════════════════════════════════════════════════════════════════
-# 7️⃣  SENTIMENT ANALYSIS
+# 7️⃣  SENTIMENT ANALYSIS (CELL 6)
 # ═══════════════════════════════════════════════════════════════════════
 
 def analyze_sentiment(text, sent_model, sent_tokenizer):
+    """Analyze sentiment using Twitter RoBERTa (or default to neutral)"""
     if not text or text.startswith('['):
         return 'neutral', 0.5
+    
+    # If model not available, return neutral
     if sent_model is None or sent_tokenizer is None:
         return 'neutral', 0.5
+    
     try:
         inputs = sent_tokenizer(text, return_tensors='pt', truncation=True, max_length=128)
-        # CPU دايماً للـ sentiment
         with torch.no_grad():
-            scores = torch.softmax(sent_model(**inputs).logits, dim=1).numpy()[0]
-        idx    = int(np.argmax(scores))
+            outputs = sent_model(**inputs)
+        import numpy as np
+        scores = torch.softmax(outputs.logits, dim=1).numpy()[0]
+        best_idx = int(np.argmax(scores))
         labels = ['negative', 'neutral', 'positive']
-        return labels[idx], round(float(scores[idx]), 3)
+        return labels[best_idx], round(float(scores[best_idx]), 3)
     except:
         return 'neutral', 0.5
 
 
 # ═══════════════════════════════════════════════════════════════════════
-# 8️⃣  INTENTION DETECTION
+# 8️⃣  INTENTION DETECTION (CELL 6)
 # ═══════════════════════════════════════════════════════════════════════
 
 def detect_intention(text, phonetics, intention_map):
+    """Detect intention from text"""
     combined = (text + ' ' + phonetics).lower()
-    words    = set(combined.split())
-    scores   = {i: len(words & d['keywords']) for i, d in intention_map.items() if words & d['keywords']}
+    words = set(combined.split())
+    scores = {}
+    for intent, data in intention_map.items():
+        hits = len(words & data['keywords'])
+        if hits > 0:
+            scores[intent] = hits
     if not scores:
         return 'descriptive', 'وصفي'
-    best = max(scores, key=scores.get)
-    return best, intention_map[best]['arabic']
+    best_intent = max(scores, key=scores.get)
+    best_ar = intention_map[best_intent]['arabic']
+    return best_intent, best_ar
 
 
 # ═══════════════════════════════════════════════════════════════════════
-# 9️⃣  FULL PIPELINE CLASS
+# 9️⃣  FULL NLP PIPELINE
 # ═══════════════════════════════════════════════════════════════════════
 
 class HieroglyphNLPPipeline:
-    """
-    Complete Hieroglyph NLP Pipeline — Local GPU version
-
-    التحميل بيحصل مرة واحدة عند الـ init.
-    Seed-X-PPO-7B على GPU، Sentiment على CPU.
-    """
-
+    """Complete Hieroglyph NLP Pipeline"""
+    
     def __init__(self):
         print('🏺 Initializing Hieroglyph NLP Pipeline...')
-        print(f'   Device : {DEVICE}')
-        print(f'   DType  : {COMPUTE_DTYPE}')
-
-        # ── Data ──────────────────────────────────────────────────
-        self.gardiner_map  = load_gardiner_signs()
-        self.egypt_dict    = load_egyptian_dictionary()
+        
+        # Load data
+        self.gardiner_map = load_gardiner_signs()
+        self.egypt_dict = load_egyptian_dictionary()
         self.intention_map = load_intention_dataset()
-
-        # ── Models ────────────────────────────────────────────────
+        
+        # Load models
         self.nlp_spacy = load_spacy_model()
-
-        self.trans_model, self.trans_tokenizer = load_translation_model()
-
-        self.sent_model, self.sent_tokenizer = load_sentiment_model()
-
-        print('✅ Pipeline ready!')
-
-    def process(self, gardiner_codes):
-        # Step 1: Transliteration
-        trans        = transliterate(gardiner_codes, self.gardiner_map, self.egypt_dict, self.nlp_spacy)
-        best_meaning = trans['best_meaning']
-        sentence     = trans['sentence']
-
-        if sentence:
-            english, method = sentence, 'spacy-nlp'
-        elif best_meaning:
-            english, method = best_meaning, 'dictionary'
+        result = load_translation_model()
+        if len(result) == 3:
+            self.trans_model, self.trans_tokenizer, self.trans_lang = result
         else:
-            english, method = f'[unknown: {trans["assembled"]}]', 'none'
-
-        # Step 2: Translation → Arabic
+            self.trans_model, self.trans_tokenizer = result
+            self.trans_lang = None
+        self.sent_model, self.sent_tokenizer = load_sentiment_model()
+        
+        print('✅ Pipeline ready!')
+    
+    def process(self, gardiner_codes):
+        """Process Gardiner codes through full pipeline"""
+        # Step 1: Transliteration
+        trans = transliterate(
+            gardiner_codes,
+            self.gardiner_map,
+            self.egypt_dict,
+            self.nlp_spacy
+        )
+        
+        glyph_str = trans['glyph_str']
+        phonetic_str = trans['phonetic_str']
+        found_words = trans['found_words']
+        best_meaning = trans['best_meaning']
+        sentence = trans['sentence']
+        
+        # Determine English meaning - PRIORITY: spaCy sentence > dictionary > unknown
+        if sentence and len(sentence) > 0:
+            english = sentence
+            method = 'spacy-nlp'
+        elif best_meaning:
+            english = best_meaning
+            method = 'dictionary'
+        else:
+            english = f'[unknown: {trans["assembled"]}]'
+            method = 'none'
+        
+        # Step 2: Translation - Use the final English sentence
         arabic = translate_to_arabic(
             english,
             self.trans_model,
             self.trans_tokenizer,
+            self.trans_lang
         )
-
-        # Step 3: Sentiment
-        sentiment_text        = (sentence + ' ' + (best_meaning or '')).strip()
-        sentiment, sent_score = analyze_sentiment(sentiment_text, self.sent_model, self.sent_tokenizer)
-
-        # Step 4: Intention
+        
+        # Step 3: Sentiment Analysis
+        sentiment_text = (sentence + ' ' + (best_meaning or '')).strip()
+        sentiment, sent_score = analyze_sentiment(
+            sentiment_text,
+            self.sent_model,
+            self.sent_tokenizer
+        )
+        
+        # Step 4: Intention Detection
         intention_en, intention_ar = detect_intention(
-            sentiment_text, trans['phonetic_str'], self.intention_map
+            sentiment_text,
+            phonetic_str,
+            self.intention_map
         )
-
+        
         return {
-            'input':         gardiner_codes,
-            'glyphs':        trans['glyph_str'],
-            'per_sign':      trans['per_sign'],
-            'phonetics':     trans['phonetic_str'],
-            'assembled':     trans['assembled'],
+            'input': gardiner_codes,
+            'glyphs': glyph_str,
+            'per_sign': trans['per_sign'],
+            'phonetics': phonetic_str,
+            'assembled': trans['assembled'],
             'token_results': trans['token_results'],
-            'found_words':   trans['found_words'][:3],
-            'sentence':      sentence,
-            'english':       english,
-            'trans_method':  method,
-            'arabic':        arabic,
-            'sentiment':     sentiment,
-            'sent_score':    sent_score,
-            'intention_en':  intention_en,
-            'intention_ar':  intention_ar,
+            'found_words': found_words[:3],  # Top 3 matches
+            'sentence': sentence,
+            'english': english,
+            'trans_method': method,
+            'arabic': arabic,
+            'sentiment': sentiment,
+            'sent_score': sent_score,
+            'intention_en': intention_en,
+            'intention_ar': intention_ar,
         }

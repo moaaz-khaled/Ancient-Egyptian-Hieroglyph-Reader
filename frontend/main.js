@@ -1,6 +1,7 @@
-const API_BASE = 'http://localhost:5000';
-let examples = {};
+// const API_BASE = 'http://localhost:5000';
+const API_BASE = 'https://irretrievably-unsimpering-darrin.ngrok-free.dev';
 
+let examples = {};
 
 function showError(message) {
     const box = document.getElementById('errorBox');
@@ -20,15 +21,36 @@ function hideLoading(btn) {
 }
 
 function getSentimentEmoji(sentiment) {
-    if (sentiment === 'positive') return '😊';
-    if (sentiment === 'negative') return '😞';
-    return '😐';
+    if (sentiment === 'positive') 
+        return '😊';
+    else if (sentiment === 'negative') 
+        return '😞';
+    else
+        return '😐';
 }
 
+function updateGlyphPreview(glyphStr) {
+    const box   = document.getElementById('glyphPreviewBox');
+    const inner = document.getElementById('glyphPreviewGlyphs');
+    if (glyphStr === 'loading') {
+        inner.innerHTML = '<span class="glyph-preview-placeholder">Loading<span class="loading-dots"></span></span>';
+        box.classList.remove('active');
+    } 
+    else if (glyphStr && glyphStr.trim()) {
+        inner.innerHTML = glyphStr;
+        box.classList.add('active');
+    } 
+    else {
+        inner.innerHTML = '<span class="glyph-preview-placeholder">Enter codes and press Decipher to reveal glyphs</span>';
+        box.classList.remove('active');
+    }
+}
 
 async function loadExamples() {
     try {
-        const response = await fetch(`${API_BASE}/api/examples`);
+        const response = await fetch(`${API_BASE}/api/examples`, {
+            headers: { 'ngrok-skip-browser-warning': 'true' }
+        });
         const data = await response.json();
         examples = data;
         renderExamples();
@@ -44,37 +66,37 @@ function renderExamples() {
     for (const [key, example] of Object.entries(examples)) {
         const chip = document.createElement('span');
         chip.className = 'chip';
+        chip.title = example.description;
         chip.textContent = example.codes.join(', ');
         chip.onclick = () => {
             document.getElementById('codesInput').value = example.codes.join(', ');
-            decipher();
+            document.getElementById('codesInput').focus();
         };
         container.appendChild(chip);
     }
 }
 
-
 async function decipher() {
     const input = document.getElementById('codesInput').value.trim();
-    if (!input) {
-        showError('Please enter Gardiner codes');
-        return;
+    if (!input) { 
+        showError('Please enter Gardiner codes'); 
+        return; 
     }
-
     const codes = input.split(',').map(c => c.trim().toUpperCase()).filter(c => c);
-    if (codes.length === 0) {
-        showError('Invalid codes format');
-        return;
+    if (codes.length === 0) { 
+        showError('Invalid codes format'); 
+        return; 
     }
-
     const btn = document.getElementById('decipherBtn');
     showLoading(btn);
     clearResults();
-
     try {
         const response = await fetch(`${API_BASE}/api/decipher`, {
             method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
+            headers: {
+                'Content-Type': 'application/json',
+                'ngrok-skip-browser-warning': 'true'
+            },
             body: JSON.stringify({ codes })
         });
 
@@ -86,7 +108,8 @@ async function decipher() {
         const result = await response.json();
         if (result.success) {
             renderResults(result.data);
-        } else {
+        } 
+        else {
             showError(result.error);
         }
     } catch (e) {
@@ -96,13 +119,13 @@ async function decipher() {
     }
 }
 
-
 function clearResults() 
 {
-    document.getElementById('signTableBody').innerHTML  = '';
+    updateGlyphPreview('loading');
+    document.getElementById('signTableBody').innerHTML = '';
     const hint = document.getElementById('tableHint');
-    hint.style.display  = 'block';
-    hint.textContent    = 'Loading...';
+    hint.style.display = 'block';
+    hint.textContent   = 'Loading...';
     document.getElementById('englishResult').textContent  = '';
     document.getElementById('arabicResult').textContent   = '';
     document.getElementById('sentimentResult').innerHTML  = '';
@@ -110,17 +133,16 @@ function clearResults()
     document.getElementById('intentionAr').textContent    = '';
 }
 
+function renderResults(data) {
+    updateGlyphPreview(data.glyphs || '');
 
-function renderResults(data) 
-{
     document.getElementById('tableHint').style.display = 'none';
 
     const tbody      = document.getElementById('signTableBody');
     tbody.innerHTML  = '';
     const glyphParts = data.glyphs ? data.glyphs.split(' ') : [];
 
-    for (let i = 0; i < data.per_sign.length; i++) 
-    {
+    for (let i = 0; i < data.per_sign.length; i++) {
         const [code, phonetic, meaning] = data.per_sign[i];
         const row      = document.createElement('tr');
         const glyphStr = glyphParts[i] || '□';
@@ -133,8 +155,7 @@ function renderResults(data)
         tbody.appendChild(row);
     }
 
-    const displayEnglish = (data.sentence && data.sentence.length > 0)
-        ? data.sentence : data.english;
+    const displayEnglish = (data.sentence && data.sentence.length > 0) ? data.sentence : data.english;
     document.getElementById('englishResult').textContent = displayEnglish || '';
     document.getElementById('arabicResult').textContent  = data.arabic    || '';
 
@@ -147,10 +168,10 @@ function renderResults(data)
     document.getElementById('intentionAr').textContent = data.intention_ar || '';
 }
 
-
 document.getElementById('decipherBtn').addEventListener('click', decipher);
 document.getElementById('codesInput').addEventListener('keypress', (e) => {
-    if (e.key === 'Enter') decipher();
+    if (e.key === 'Enter') 
+        decipher();
 });
 
 window.addEventListener('DOMContentLoaded', () => {
@@ -158,9 +179,7 @@ window.addEventListener('DOMContentLoaded', () => {
     setInitialHints();
 });
 
-
-function setInitialHints() 
-{
+function setInitialHints() {
     document.getElementById('englishResult').innerHTML   =
         '<span class="card-hint">press Decipher to reveal the translation</span>';
     document.getElementById('arabicResult').innerHTML    =
