@@ -1,0 +1,868 @@
+﻿code,phonetic,meaning,unicode,phonetic_tla
+A1,s,Seated man,𓀀,s
+A10,,Man holding an oar,𓀌,
+A11,,Man with scepter and crook,𓀍,
+A12,,Man with bow and quiver,𓀎,
+A13,,Man with arms bound,𓀏,
+A14,,Man with bleeding head,𓀐,
+A14A,,Man with axe to head,𓀑,
+A15,,Man falling,𓀒,
+A16,,Man bowing,𓀓,
+A17,Xrd,Child with hand to mouth,𓀔,ẖrd
+A17A,Xrd,Child sitting,𓀕,ẖrd
+A18,,Child wearing red crown,𓀖,
+A19,,Aged man bending with stick,𓀗,
+A2,A,Man with hand to mouth,𓀁,ꜣ
+A20,,Man leaning on forked stick,𓀘,
+A21,sr,Man with stick,𓀙,sr
+A22,,Statue of man with stick and scepter,𓀚,
+A23,,King with stick and mace,𓀛,
+A24,,Man striking with stick in both hands,𓀜,
+A25,,Man striking with stick in one hand,𓀝,
+A26,a,Man gesturing,𓀞,ꜥ
+A27,in,Man running,𓀟,in
+A28,qAi,Man with arms raised up,𓀠,qꜣi
+A29,,Man upside down,𓀡,
+A3,,Man sitting on heel,𓀂,
+A30,,Man with arms outstretched,𓀢,
+A31,,Man with arms turned behind him,𓀣,
+A32,,Dancing man,𓀤,
+A33,,Man with stick and bindle,𓀥,
+A34,ti,Man pounding in a mortar,𓀦,ti
+A35,qd,Man building a wall,𓀧,qd
+A36,fqA,Man straining into a vessel,𓀨,fqꜣ
+A37,,Commoner form A36,𓀩,
+A38,,Man holding two animal emblems,𓀪,
+A39,,Man holding two giraffes,𓀫,
+A4,,Man with arms raised,𓀃,
+A40,,Seated god,𓀭,
+A40A,,,𓀮,
+A41,nswt,King in white crown,𓀮,nswt
+A42,,Seated king holding flail,𓀯,
+A42A,,,𓀱,
+A43,,King wearing white crown of Upper Egypt,𓀰,
+A43A,,,𓀳,
+A44,,King holding flail and wearing white crown of Upper Egypt,𓀱,
+A45,bity,King wearing red crown of Lower Egypt.,𓀲,bity
+A45A,,,𓀶,
+A46,,King holding flail and wearing red crown of Lower Egypt.,𓀳,
+A47,s3w,Seated shepherd,𓀴,s3w
+A48,,Man holding knife,𓀹,
+A49,,Foreigner with stick,𓀺,
+A5,,Man hiding,𓀄,
+A50,Spsi,Noble seated on chair,𓀻,špsi
+A51,Spsi,Noble seated on chair with flagellum,𓀼,špsi
+A52,,Kneeling noble with flail,𓀽,
+A53,sah,Upright mummy,𓀾,sꜥh
+A54,,Recumbent mummy,𓀿,
+A55,,Mummy on bed,𓁀,
+A59,,Man threatening stick with one hand,𓁄,
+A5A,,Man hiding variant,𓀅,
+A6,,Man purifying,𓀆,
+A6A,,Man purifying variant,𓀇,
+A6B,,Man purifying variant 2,𓀈,
+A7,,Fatigued man,𓀉,
+A8,hnw,Man performing hnw,𓀊,hnw
+A9,,Man with basket on head,𓀋,
+AA1,,Placenta?,𓐍,
+AA10,,Unknown,𓐘,
+AA11,,Unknown sign,𓐙,
+AA11,,Unknown sign,𓐙,
+AA12,,Unknown,𓐚,
+AA13,ip,Crossed planks,𓏭,ip
+AA14,,Unknown,𓐜,
+AA15,Dr,Unclassified variant,𓏮,ḏr
+AA16,,Short form Aa13,𓐞,
+AA16,,Z10,Z9,
+AA17,,Back of something?,𓐟,
+AA18,,Var. of Aa17,𓐠,
+AA19,,Unknown,𓐡,
+AA2,nD,Pustule or gland?,𓐁,nḏ
+AA20,,Unknown,𓐢,
+AA21,,Unknown,𓐣,
+AA22,,Combination of Aa21 + D36,𓐤,
+AA23,,Warp between stakes?,𓐥,
+AA24,,Var. Aa23,𓐦,
+AA25,,Unknown,𓐧,
+AA26,,Unknown,𓐨,
+AA27,,Unclassified sign,𓐩,
+AA28,,Unclassified sign,𓐪,
+AA29,,Var. of Aa28,𓐫,
+AA3,,Aa2 with substance issuing,𓐏,
+AA30,,Frieze element?,𓐬,
+AA30,,V36,Aa20,
+AA31,,Var. of Aa30,𓐭,
+AA4,,Pot,𓐐,
+AA5,xnt,Combination sign,𓐅,ḫnt
+AA6,,Unknown,𓐒,
+AA7,,Unknown,𓐓,
+AA8,,Irrigation canal?,𓐖,
+AA8,,V26,Aa9,
+AA9,,Unknown,𓐗,
+B1,st,Seated woman,𓁐,st
+B2,,Pregnant woman,𓁑,
+B3,msi,Woman giving birth,𓁒,msi
+B4,,Woman nursing child,𓁓,
+B5,,Woman with hand to mouth,𓁔,
+B6,,Woman and seated child,𓁕,
+B7,,Seated queen holding flower,𓁖,
+C1,ra,God with sun-disk and uraeus,𓁚,rꜥ
+C10,mAat,Goddess with feather,𓁦,mꜣꜥt
+C10A,mAat,Goddess with feather holding ʿnḫ,𓁧,mꜣꜥt
+C11,HH,Heh figure,𓁨,ḥḥ
+C12,imn,Amun,𓁩,imn
+C17,imn,God with double plumes,𓁮,imn
+C18,,God with was scepter,𓁯,
+C19,ptH,Ptah,𓁰,ptḥ
+C2,ra,God with falcon head and sun-disk holding ʿnḫ,𓁜,rꜥ
+C20,Wsir,God mummiform,𓁱,Wsir
+C3,DHwty,God with ibis head,𓁟,ḏḥwty
+C4,Xnmw,God with ram head,𓁠,ẖnmw
+C5,ra,God with ram head holding ʿnḫ,𓁡,rꜥ
+C6,inpw,God with jackal head,𓁢,inpw
+C7,stX,God with Seth head,𓁣,stẖ
+C8,Mnw,Min,𓁤,Mnw
+C9,Hwt-Hr,Goddess with horned sun-disk,𓁥,ḥwt-ḥr
+D1,tp,Head,𓁶,tp
+D10,wDAt,Eye with falcon’s head marking,𓂀,wḏꜣt
+D11,irt,White part of w3ḏt eye,𓂁,irt
+D12,irt,Pupil of eye,𓂂,irt
+D13,inh,Eyebrow,𓂃,inh
+D14,,White part of w3ḏt eye,𓂄,
+D15,,Part of w3ḏt eye markings,𓂅,
+D16,,Part of w3ḏt eye markings,𓂆,
+D17,tit,Markings of wedjat eye,𓂇,tit
+D18,msDr,Ear,𓂈,msḏr
+D19,fnD,"Eye, nose, and cheek",𓂉,fnḏ
+D2,Hr,Face,𓁷,ḥr
+D20,fnD,Nose with eye,𓂊,fnḏ
+D21,r,Mouth,𓂋,r
+D21,r,Mouth,𓂋,r
+D22,rwy,Mouth with two lines,𓂌,rwy
+D23,Xmt,Mouth with three lines,𓂍,ẖmt
+D24,spt,Upper lip with teeth,𓂎,spt
+D25,spty,Lips with teeth,𓂏,spty
+D26,,Lips spewing water,𓂐,
+D27,mn,Breast,𓂑,mn
+D27A,mn,Breast variant,𓂒,mn
+D28,kA,Two arms upraised,𓂓,kꜣ
+D29,kA,Combination D28 + T3,𓂔,kꜣ
+D3,Swt,Hair,𓁸,šwt
+D30,kA,Combination D28 + T28,𓂕,kꜣ
+D31,Hm-kA,Combination of signs D32 and U36,𓂖,ḥm-kꜣ
+D32,H3,Two arms embracing,𓂗,ḥ3
+D33,Xni,Arms holding oar,𓂙,ẖni
+D34,H3,Arms with shield and axe,𓂚,ḥ3
+D34A,,Arms with shield and mace,𓂛,
+D35,n,Negative arms,𓂜,n
+D36,a,Arm,𓂝,ꜥ
+D37,mi,Arm holding sign X8,𓂞,mi
+D38,di,Arm holding bread,𓂟,di
+D39,di,Arm holding W24,𓂠,di
+D4,ir,Eye,𓁹,ir
+D40,,Arm holding stick,𓂡,
+D41,n,Arm with downward facing palm,𓂢,n
+D42,mH,Arm with downward facing palm,𓂣,mḥ
+D43,Xwi,Arm with flail,𓂤,ẖwi
+D44,Xrp,Arm with scepter sekhem,𓂥,ẖrp
+D45,Dsr,Arm with brush,𓂦,ḏsr
+D46,D,Hand,𓂧,ḏ
+D46A,idt,Hand with water,𓂨,idt
+D47,Drt,Hand flat,𓂩,ḏrt
+D48,Ssp,Palm without thumb,𓂪,šsp
+D49,ams,Fist,𓂫,ꜥms
+D5,,Eye with paint,𓁺,
+D50,Db,Vertical finger,𓂭,ḏb
+D51,Db,Horizontal finger,𓂮,ḏb
+D52,mt,Phallus,𓂱,mt
+D53,bAH,Phallus with liquid,𓂲,bꜣḥ
+D54,rd,Legs walking,𓂻,rd
+D55,rd,Legs walking (reverse of D54),𓂼,rd
+D56,b,Leg,𓂾,b
+D57,,Leg with knife,𓂿,
+D58,b,Foot,𓃀,b
+D59,,Foot with vase,𓃁,
+D6,,Eye with eyebrow,𓁻,
+D60,wab,Foot with water streaming,𓃂,wꜥb
+D61,s3H,Toes,𓃃,s3ḥ
+D62,s3H,Var. D61,𓃄,s3ḥ
+D63,s3H,Var. D61,𓃅,s3ḥ
+D7,,Eye with paint lines,𓁼,
+D8,,Eye with markings,𓁽,
+D9,rmi,Eye weeping,𓁿,rmi
+E1,kA,Bull,𓃒,kꜣ
+E10,rr,Pig,𓃛,rr
+E11,iwiw,Dog,𓃜,iwiw
+E12,rr,Pig,𓃟,rr
+E13,miw,Cat,𓃞,miw
+E14,tsm,Dog on standard,𓃟,tsm
+E15,sAb,Recumbent jackal,𓃢,sꜣb
+E16,inpw,Recumbent Jackal on shrine,𓃣,inpw
+E17,sAb,Jackal,𓃥,sꜣb
+E18,inpw,Jackal on standard R12,𓃧,inpw
+E19,,O.K. form of last,𓃨,
+E2,kA,Bull preparing to charge,𓃓,kꜣ
+E20,stX,Seth animal,𓃩,stẖ
+E21,mAi,Recumbent Seth animal,𓃭,mꜣi
+E22,mAi,Prowling lion,𓃬,mꜣi
+E23,rw,Recumbent lion,𓃯,rw
+E24,AbS,Panther,𓃮,ꜣbš
+E25,dbt,Hippopotamus,𓃰,dbt
+E26,Abu,Elephant,𓃱,ꜣbu
+E27,mmy,Giraffe,𓃲,mmy
+E28,iAw,Goat,𓃳,iꜣw
+E29,nfr,Long-horned bull,𓃴,nfr
+E3,iHt,Cow with horns,𓃔,iḥt
+E30,nAt,Ibex,𓃵,nꜣt
+E31,,Goat with collar,𓃶,
+E32,iAn,Baboon,𓃷,iꜣn
+E33,gfw,Monkey,𓃸,gfw
+E34,wn,Hare,𓃻,wn
+E4,iHt,Sacred cow,𓃕,iḥt
+E5,,Cow with calf,𓃖,
+E6,Htr,Horse,𓃗,ḥtr
+E7,aA,Donkey,𓃘,ꜥꜣ
+E8,ib,Kid,𓃙,ib
+E9,iw,Newborn bubalis,𓃚,iw
+F1,Xr,Head of ox,𓃾,ẖr
+F10,wp,Head and neck of animal,𓄈,wp
+F11,wp,O.K. form of F10,𓄉,wp
+F12,wsr,Head and neck of jackal,𓄊,wsr
+F13,wp,Horns of ox,𓄋,wp
+F14,,Combination of F13 and M4,𓄌,
+F15,,Combination of F14 and N5,𓄍,
+F16,db,Horn,𓄎,db
+F17,db,Combination of F16 and D60 water vessel,𓄏,db
+F18,bH,Tusk of elephant,𓄑,bḥ
+F19,nDt,Jawbone of ox,𓄒,nḏt
+F2,idn,Head of ox with horns,𓃿,idn
+F20,ns,Tongue,𓄓,ns
+F21,msDr,Ear of ox,𓄔,msḏr
+F22,pHwy,Hindquarters of leopard or lion,𓄖,pḥwy
+F23,kfA,Foreleg of ox,𓄗,kfꜣ
+F24,kfA,Reverse of F23,𓄘,kfꜣ
+F25,wHmt,Leg and hoof of ox,𓄙,wḥmt
+F26,km,Skin with tail,𓄚,km
+F27,idb,Skin of cow,𓄛,idb
+F28,,Skin of goat,𓄜,
+F29,sti,Combination of F28 + arrow,𓄝,sti
+F3,dbt,Head of hippopotamus,𓄁,dbt
+F30,inm,Inflated skin,𓄞,inm
+F31,ms,Three fox skins,𓄟,ms
+F32,XpS,Animal belly and tail,𓄡,ẖpš
+F33,sd,Tail,𓄢,sd
+F34,ib,Heart,𓄣,ib
+F34,ib,Heart,𓄣,ib
+F35,nfr,Heart and windpipe,𓄤,nfr
+F36,smA,Lung and windpipe,𓄥,smꜣ
+F36,smA,Lung and windpipe,𓄥,smꜣ
+F37,imAt,Backbone and ribs,𓄦,imꜣt
+F38,imAt,Combination F37 + D40,𓄧,imꜣt
+F39,Abd,Backbone and spinal cord,𓄨,ꜣbd
+F4,tp,Forepart of lion,𓄂,tp
+F40,Aw,Backbone and spinal cord at each end,𓄩,ꜣw
+F41,Aqt,Vertebrae,𓄪,ꜣqt
+F42,spr,Rib,𓄭,spr
+F42,spr,Rib,𓄭,spr
+F43,spr,Combination ribs,𓄮,spr
+F44,iwa,Leg bone with meat,𓄯,iwꜥ
+F45,idn,Heifer uterus,𓄰,idn
+F46,Xr,Intestine,𓄲,ẖr
+F46,Xr,Intestine,𓄲,ẖr
+F47,qbb,Intestine coiled,𓄳,qbb
+F48,Xr,Var. of F46,𓄴,ẖr
+F49,Xr,Var. of F46,𓄷,ẖr
+F5,Ss3,Head of bubalis,𓄃,šs3
+F50,,Combination of F46 and S29,𓄸,
+F51,isft,Piece of flesh,𓄵,isft
+F52,Hs,Excrement,𓄽,ḥs
+F6,,Forepart of bubalis,𓄄,
+F7,Sr,Head of ram,𓄅,šr
+F8,Sr,Forepart of ram,𓄆,šr
+F9,fAi,Head of leopard,𓄇,fꜣi
+G1,A,Egyptian vulture,𓄿,ꜣ
+G10,Hr,Falcon in sacred bark,𓅈,ḥr
+G11,Hr,Falcon with two plumes,𓅉,ḥr
+G12,Hr,Falcon image with flail,𓅊,ḥr
+G13,Hr,Falcon image with S9,𓅏,ḥr
+G14,mt,Vulture,𓅐,mt
+G15,,Vulture with flail,𓅑,
+G16,nbty,Vulture and cobra,𓅒,nbty
+G17,m,Owl,𓅓,m
+G18,mm,Two owls,𓅔,mm
+G19,m,Combination of G17 + D37,𓅕,m
+G2,AA,Two vultures,𓅀,ꜣꜣ
+G20,m,Combination of G17 + D36,𓅔,m
+G21,nH,Guinea fowl,𓅕,nḥ
+G22,Dbt,Hoopoe,𓅖,ḏbt
+G23,rxt,Lapwing,𓅗,rḫt
+G24,rxt,Lapwing crested,𓅘,rḫt
+G25,ax,Crested ibis,𓅛,ꜥḫ
+G26,DHwty,Sacred ibis on standard,𓅜,ḏḥwty
+G26A,DHwty,Sacred ibis,𓅞,ḏḥwty
+G27,dSr,Flamingo,𓅝,dšr
+G28,gm,Black ibis,𓅞,gm
+G29,b3,Jabiru,𓅟,b3
+G3,Ai,Combination of G1 + U1,𓅁,ꜣi
+G30,b3b3,Three jabirus,𓅠,b3b3
+G31,b3,Heron,𓅣,b3
+G32,bnw,Heron on perch,𓅤,bnw
+G33,snw,Egret,𓅥,snw
+G34,nj,Ostrich,𓅦,nj
+G35,aq,Cormorant,𓅥,ꜥq
+G36,wr,Swallow,𓅦,wr
+G37,bin,Sparrow,𓅧,bin
+G38,gb,White goose,𓅨,gb
+G39,sA,Pintail duck,𓅩,sꜣ
+G4,nrt,Buzzard,𓅂,nrt
+G40,pA,Duck flying,𓅪,pꜣ
+G41,xn,Duck landing,𓅫,ḫn
+G42,wSA,Fattened bird,𓅰,wšꜣ
+G43,w,"Quail chick, var. Z7",𓅱,w
+G44,ww,Two quail chicks,𓅲,ww
+G45,wA,Combination of G43 + D36,𓅳,wꜣ
+G46,w,Combination of G43 + U1,𓅶,w
+G47,TAw,Duckling,𓅵,ṯꜣw
+G48,,Three ducklings in nest,𓅸,
+G49,,Ducks’ heads protruding from pool,𓅹,
+G5,Hr,Falcon,𓅃,ḥr
+G50,rXty,Two plovers,𓅺,rẖty
+G51,,Bird pecking fish,𓅻,
+G52,,Goose feeding,𓅼,
+G53,bA,Human headed bird,𓅽,bꜣ
+G54,wSm,Plucked bird,𓅹,wšm
+G6,Hr,Falcon with flail,𓅄,ḥr
+G7,Hr,Falcon on standard,𓅅,ḥr
+G7A,Hr,"Var of G7, Falcon in boat",𓅇,ḥr
+G7B,Hr,"Var of G7, G7a",𓅈,ḥr
+G8,Hr,Combination of G5 + S12,𓅆,ḥr
+G9,Hr,Falcon with sun disk,𓅇,ḥr
+H1,pA,Head of duck,𓅿,pꜣ
+H2,pq,Head of crested bird,𓆀,pq
+H3,,Head of spoonbill,𓆁,
+H4,nrt,Head of vulture,𓆂,nrt
+H5,DnH,Wing,𓆃,ḏnḥ
+H6,Sw,Feather,𓆄,šw
+H6A,,M12,M4,
+H7,,Claw,𓆅,
+H8,swt,Egg,𓆇,swt
+I1,mzH,Lizard,𓆈,mzḥ
+I10,D,Cobra,𓆓,ḏ
+I11,,Cobra with feather,𓆔,
+I12,D,Cobra rearing,𓆔,ḏ
+I13,,Combination of I12 + V30,𓆕,
+I14,D,Snake,𓆗,ḏ
+I15,,Snake with feather,𓆘,
+I2,Styw,Turtle,𓆉,štyw
+I3,sbk,Crocodile,𓆊,sbk
+I4,sbk,Crocodile on shrine,𓆋,sbk
+I5,sbk,Crocodile with curved tail,𓆌,sbk
+I6,qmA,Crocodile scales,𓆎,qmꜣ
+I6,qmA,Crocodile scales,𓆎,qmꜣ
+I7,wHm,Frog,𓆏,wḥm
+I8,Hfn,Tadpole,𓆐,ḥfn
+I9,f,Horned viper,𓆑,f
+K1,in,Tilapia fish,𓆛,in
+K2,bw,Barbel fish,𓆜,bw
+K3,ad,Mullet fish,𓆝,ꜥd
+K4,XA,Oxyrhynchus fish,𓆞,ẖꜣ
+K5,rA,Pike fish,𓆟,rꜣ
+K6,,Fish scale,𓆠,
+K7,HzmA,Blowfish,𓆡,ḥzmꜣ
+L1,xpr,Scarab beetle,𓆣,ḫpr
+L2,bit,Bee,𓆤,bit
+L3,Aff,Fly,𓆥,ꜣff
+L4,snHm,Locust,𓆦,snḥm
+L5,spt,Centipede,𓆧,spt
+L6,mHnt,Shell,𓆩,mḥnt
+L6,mHnt,Shell,𓆩,mḥnt
+L7,srqt,Scorpion,𓆫,srqt
+M1,xt,Tree,𓇁,ḫt
+M10,xA,Lotus bud,𓆹,ḫꜣ
+M11,,Flower and stem,𓆻,
+M12,xA,Lotus plant,𓆱,ḫꜣ
+M13,wAD,Papyrus stem,𓇲,wꜣḏ
+M14,,Combination of M13 and I10,𓇳,
+M15,,Papyrus clump with downward facing buds.,𓇴,
+M16,iAdt,Papyrus clump,𓆵,iꜣdt
+M17,i,Reed leaf,𓇋,i
+M18,i,Combination of M17 + D54,𓇌,i
+M19,,Conical cakes between signs M17 and U36,𓇎,
+M2,Hn,Plant,𓆧,ḥn
+M20,sm,Reed field,𓇍,sm
+M21,sm,Reed field with root,𓇐,sm
+M22,nn,Rush with shoots,𓇓,nn
+M23,sw,Sedge,𓇔,sw
+M24,rsw,Combination sedge + mouth,𓇕,rsw
+M25,,Combination of M26 + M24,𓇖,
+M26,Smaw,Upper Egypt sedge,𓇗,šmꜥw
+M27,,Combination of M26 + D36,𓇘,
+M28,,Combination of M26 + V20,𓇙,
+M29,nDm,Pod,𓇛,nḏm
+M3,Xt,Branch,𓆨,ẖt
+M30,bnr,Root,𓇜,bnr
+M31,rDw,Rhizome,𓇝,rḏw
+M32,rDw,Var of M31,𓇟,rḏw
+M33,it,Grain,𓇠,it
+M34,bdt,Emmer sheaf,𓇣,bdt
+M35,it,X2,X3,it
+M35,it,Grain heap,𓇤,it
+M36,mHy,N34,F43,mḥy
+M36,mHy,Flax bundle,𓇥,mḥy
+M37,mHy,Flax bundle with stems,𓇤,mḥy
+M38,mHy,Flax bundle,𓇧,mḥy
+M39,Snwt,Basket of fruit or grain,𓇨,šnwt
+M4,rnpt,Stripped palm branch,𓆳,rnpt
+M40,iSt,Bundle of reeds,𓇩,išt
+M40,iSt,Bundle of reeds,𓇩,išt
+M41,xt,Wood log,𓇫,ḫt
+M42,wAD,Flower,𓇷,wꜣḏ
+M43,iArrt,Grape vines on props,𓇭,iꜣrrt
+M44,snb,Thorn,𓇮,snb
+M5,rnpt,Combination of M4 + X1,𓆴,rnpt
+M6,rnpt,Combination of M4 + D21,𓆵,rnpt
+M7,rnpt,Combination of M4 + Q3,𓆶,rnpt
+M8,3Xt,Pool with lilies,𓆷,3ẖt
+M9,ssn,Lotus flower,𓆸,ssn
+N1,pt,Sky,𓇯,pt
+N1,pt,Sky,𓇯,pt
+N10,iaH,Var of N9,𓇸,iꜥḥ
+N11,3bd,Crescent moon,𓇹,3bd
+N12,3bd,Var. of N11,𓇺,3bd
+N13,,Combination of half of N11 and N14,𓇻,
+N14,sbA,Star,𓇼,sbꜣ
+N15,Dw3t,Star in circle,𓇽,ḏw3t
+N16,tA,Flat land with grain,𓇿,tꜣ
+N17,tA,Flat land variant,𓈀,tꜣ
+N18,iw,Strip of sand,𓇾,iw
+N19,iwy,Two strips of sand,𓈃,iwy
+N2,grH,Sky with broken scepter,𓇰,grḥ
+N20,wDb,Tongue of land,𓈄,wḏb
+N21,wDb,Tongue of land,𓈅,wḏb
+N22,wDb,Tongue of land,𓈆,wḏb
+N23,mr,Irrigation canal,𓈇,mr
+N23,mr,Irrigation canal,𓈇,mr
+N24,spAt,Irrigation canal system,𓈈,spꜣt
+N25,xAst,Mountain rande,𓈋,ḫꜣst
+N26,Dw,Mountain,𓈌,ḏw
+N27,Axt,Sunrise over mountain,𓈍,ꜣḫt
+N28,xa,Sun rising over mountain,𓈎,ḫꜥ
+N29,q,Sandy slope,𓈏,q
+N3,,Sky with scepter,𓇱,
+N30,,Hill with shrubs,𓈐,
+N31,wAt,Road bordered by shrubs,𓈑,wꜣt
+N32,,"Lump of clay, Var. Aa2 and F52.",𓈑,
+N33,Say,Grain of sand,𓈓,šꜥy
+N34,Hmt,Metal Ingot,𓈔,ḥmt
+N35,n,Water ripple,𓈖,n
+N35A,nww,Three ripples,𓈗,nww
+N36,mr,Canal,𓈘,mr
+N37,S,Pool,𓈙,š
+N38,S,Pool variant,𓈚,š
+N39,S,Pool with peg,𓈛,š
+N4,Snyt,Sky with rain,𓇲,šnyt
+N40,,Combination of N37 and D54,𓈜,
+N41,bw,Well with water,𓈥,bw
+N42,Hw,Var. of N41,𓈦,ḥw
+N5,ra,Sun disk,𓇳,rꜥ
+N5,ra,Sun disk,𓇳,rꜥ
+N6,ra,Sun with uraeus,𓇴,rꜥ
+N7,ra,Combination of N5 + T28,𓇸,rꜥ
+N8,3Xw,Sun with rays,𓇶,3ẖw
+N9,iaH,Moon,𓇷,iꜥḥ
+O1,pr,House plan,𓉐,pr
+O10,Hwt,Combination of O6 + G5,𓉙,ḥwt
+O12,aH,Palace with battlements,𓉥,ꜥḥ
+O13,inbt,Enclosure with battlements,𓉦,inbt
+O14,inbt,Var. of O13,𓉧,inbt
+O15,,Walled enclosure with buttresses + W10 + X1,𓉨,
+O16,sbA,Gateway with serpents,𓉩,sbꜣ
+O17,sbA,Var. of O16,𓉪,sbꜣ
+O18,kAr,Shrine in profile,𓉫,kꜣr
+O19,kAr,Shrine in profile with poles,𓉬,kꜣr
+O2,pr,Combination of O1 + T3,𓉑,pr
+O20,Hwt,Shrine,𓉭,ḥwt
+O21,,Shrine Facade,𓉯,
+O22,,Booth supported by pole,𓉱,
+O23,,Double platform,𓉲,
+O24,mr,Pyramid surrounded by wall,𓉡,mr
+O25,txn,Obelisk,𓉴,tḫn
+O26,wD,Stela,𓉶,wḏ
+O27,,Hall with columns,𓉸,
+O28,iwn,Column with tenon,𓉣,iwn
+O29,aA,Wooden column,𓉥,ꜥꜣ
+O29V,aA,Vertical wood column,𓉼,ꜥꜣ
+O3,pr,Combination of O1 + P8 + X3 + W22,𓉒,pr
+O30,,Supporting pole,𓉽,
+O30,,Supporting pole,𓉽,
+O31,sbA,Door variant,𓉧,sbꜣ
+O32,sbA,Gateway,𓊀,sbꜣ
+O33,aH,Palace or tomb facade,𓊁,ꜥḥ
+O34,z,Door bolt,𓉻,z
+O35,,Combination of O34 + D54,𓊄,
+O36,inbt,Wall,𓊅,inbt
+O36,inbt,V28,Aa32,inbt
+O37,,Falling wall,𓊊,
+O38,qnbt,Corner of wall,𓊋,qnbt
+O39,,Stone slab,𓉷,
+O4,H,Reed shelter,𓉔,ḥ
+O40,rd,Stairway,𓊍,rd
+O41,,Double stairway,𓊎,
+O42,Szp,Fence,𓊏,šzp
+O42,Szp,Fence,𓊏,šzp
+O43,Szp,Var. of O42,𓊐,šzp
+O44,,Min emblem,𓊑,
+O45,,Domed building,𓊒,
+O46,,Var. of O45,𓊓,
+O47,,Enclosed mound,𓊔,
+O48,,Enclosure variant,𓊕,
+O48,,Enclosure variant,𓊕,
+O49,niwt,Town with crossroads,𓊖,niwt
+O5,,Combination shelter,𓉓,
+O50,sp,Threshing floor with grain,𓊗,sp
+O51,,Grain mound on mud floor,𓊚,
+O6,Hwt,Plan of rectangular enclosure,𓉕,ḥwt
+O7,,Enclosure variant,𓉖,
+O8,,Combination of O7 + O29,𓉟,
+O9,,Combination of O7 + O30,𓉘,
+P1,dpt,Boat on water,𓊛,dpt
+P10,xrw,Steering oar,𓊦,ḫrw
+P11,,Mooring post,𓊧,
+P1A,,Boat upside down,𓊜,
+P2,xnt,Ship sailing,𓊝,ḫnt
+P3,wia,Sacred barque,𓊝,wiꜥ
+P4,,Boat with net,𓊠,
+P5,nfw,Sail,𓊡,nfw
+P6,aHw,Mast,𓊢,ꜥḥw
+P7,,Combination of P6 +D36,𓊣,
+P8,xrw,Oar,𓊩,ḫrw
+P9,,Combination of P8 + I9,𓊥,
+Q1,st,Seat,𓊪,st
+Q2,st,Portable seat,𓊫,st
+Q3,p,Stool,𓊬,p
+Q3,p,Stool,𓊬,p
+Q4,wrs,Headrest,𓊫,wrs
+Q5,qbH,Chest,𓊬,qbḥ
+Q6,qrsw,Coffin,𓊭,qrsw
+Q7,xt,Brazier with flame,𓊰,ḫt
+R1,xAt,Table with jug and loaves,𓊯,ḫꜣt
+R10,,Combination of R8 + T28 + N29,𓊻,
+R11,Dd,Djed pillar,𓊽,ḏd
+R12,iwn,Standard,𓊾,iwn
+R13,Hr,Combination of G5 + R14,𓊿,ḥr
+R14,imntt,Feather on standard,𓋀,imntt
+R15,iAbtt,Spear as standard,𓋁,iꜣbtt
+R16,sxm,Scepter with feathers,𓋂,sḫm
+R17,spAt,Feathered wig with pole,𓋄,spꜣt
+R18,,Var. of R17,𓋅,
+R19,,Combination of S40 + feather,𓋆,
+R2,,Table with bread slices,𓊰,
+R20,sSSt,Seshat emblem,𓋇,sššt
+R21,,Var. of R20,𓋈,
+R22,mnw,Min emblem,𓋉,mnw
+R23,,Var. of R22,𓋊,
+R24,,Combination flag,𓊿,
+R25,,Var. of R24,𓋌,
+R3,,Low table with Jug and loaves,𓊲,
+R4,Htp,Bread loaf on mat,𓊵,ḥtp
+R5,kp,Censer,𓊶,kp
+R6,kp,Var. of R5,𓊷,kp
+R7,kp,Incense bowl,𓊸,kp
+R8,nTr,Flag,𓊹,nṯr
+R8,nTr,Flag,𓊹,nṯr
+R9,,Combination of R8 + V33,𓊺,
+S1,HDt,White crown of Upper Egypt,𓋑,ḥḏt
+S10,mDH,Headband,𓋜,mḏḥ
+S11,wsx,Collar,𓋝,wsḫ
+S11,wsx,M42,N15,wsḫ
+S12,nbw,Collar of beads,𓋡,nbw
+S13,,Combination of S12 + D58,𓋟,
+S14,,Combination of S12 + T3,𓋠,
+S14A,,Combination of S12 + S40,𓋡,
+S15,mkt,Faience pectoral,𓋣,mkt
+S16,mkt,Var. of S15,𓋤,mkt
+S17,mkt,Var of S15,𓋥,mkt
+S18,wsx,Bead necklace,𓋧,wsḫ
+S19,sT,Necklace and cylinder seal,𓋨,sṯ
+S2,HDt,Combination of S1 + V30,𓋒,ḥḏt
+S20,sT,Necklace and cylinder seal,𓋩,sṯ
+S21,anx,Ring,𓋭,ꜥnḫ
+S22,tpw,Shoulder knot,𓋫,tpw
+S23,,Knotted cloth,𓋬,
+S24,Tz,Knotted belt,𓋯,ṯz
+S24,Tz,Knotted belt,𓋯,ṯz
+S25,,Garment with ties,𓋮,
+S26,,Apron,𓋯,
+S27,mnxt,Horizontal strips of cloth,𓋲,mnḫt
+S28,sfX,Cloth with fringe + S29,𓋴,sfẖ
+S29,s,Folded cloth,𓋴,s
+S3,HDt,Red crown of Lower Egypt,𓋠,ḥḏt
+S30,,Combination of S29 + I9,𓋵,
+S31,,Combination of S29 + U1,𓋶,
+S32,,Cloth iwht fringe,𓋷,
+S33,Tbw,Sandal,𓋸,ṯbw
+S34,anx,Sandal strap,𓋹,ꜥnḫ
+S35,Swt,Sunshade,𓋺,šwt
+S36,Swt,Var. of S35,𓋼,šwt
+S37,Swt,R15,R14,šwt
+S37,Swt,Fan,𓋽,šwt
+S38,HqA,Crook,𓋾,ḥqꜣ
+S38,HqA,Crook,𓋾,ḥqꜣ
+S39,awt,Crook,𓋿,ꜥwt
+S4,HDt,Combination of S3 + V30,𓋕,ḥḏt
+S40,wAs,Scepter with Seth animal,𓌀,wꜣs
+S40,wAs,Was scepter,𓌀,wꜣs
+S41,wAs,Scepter with spiral shaft and Seth animal,𓌁,wꜣs
+S42,xrp,Sekhem scepter,𓌂,ḫrp
+S43,mdw,Staff,𓌃,mdw
+S44,,Staff with flail,𓌄,
+S45,nxxw,Flail,𓌅,nḫḫw
+S5,sxmty,Combination of red and white crown,𓋖,sḫmty
+S6,sxmty,Combination of S5 + V30,𓋗,sḫmty
+S7,xprS,Blue Crown,𓋙,ḫprš
+S8,Atf,Atef crown,𓋚,ꜣtf
+S9,Swtj,Double plumes,𓋛,šwtj
+T1,HD,Angular headed mace,𓌇,ḥḏ
+T10,pDt,Composite bow,𓌔,pḏt
+T11,swnt,Arrow,𓌕,swnt
+T12,rwD,Bowstring,𓌗,rwḏ
+T13,,Wood tied together,𓌘,
+T14,qmA,Throw stick,𓌙,qmꜣ
+T15,qmA,Var. of T14,𓌚,qmꜣ
+T16,xpS,Scimitar,𓌛,ḫpš
+T17,,Chariot,𓌝,
+T18,,Crook with package,𓌍,
+T19,qn,Bone harpoon head,𓌟,qn
+T19,qn,R21,T20,qn
+T2,HD,T3 tilted,𓌈,ḥḏ
+T20,qn,Var. of T19,𓌠,qn
+T21,anx,Harpoon,𓌡,ꜥnḫ
+T21,anx,Harpoon,𓌡,ꜥnḫ
+T22,Aw,Arrowhead,𓌔,ꜣw
+T23,,Var. of T22,𓌣,
+T24,iHw,Fishing net,𓌤,iḥw
+T25,,Reed Float,𓌥,
+T26,sxt,Bird Trap,𓌦,sḫt
+T27,,Var. of T26,𓌧,
+T28,nmt,Butcher’s block,𓌘,nmt
+T29,,Combination of T28 + T30,𓌩,
+T3,HD,Mace with round head,𓌁,ḥḏ
+T30,dmt,Knife,𓌪,dmt
+T31,sm,Knife sharpener,𓌫,sm
+T32,,Combination of T31 + D54,𓌬,
+T33,,Butcher’s knife sharpener,𓌮,
+T34,,Butcher’s knife,𓌰,
+T35,,Var. of T34,𓌱,
+T35,,U29,U28,
+T4,HD,Var of T3,𓌋,ḥḏ
+T5,,Combination of T3 + I10,𓌌,
+T6,,Combination of T5 + extra I10,𓌍,
+T7,mA,Axe,𓌎,mꜣ
+T7A,mA,Axe,𓌏,mꜣ
+T8,sfT,Dagger,𓌐,sfṯ
+T8A,sfT,Dagger,𓌑,sfṯ
+T9,pDt,Bow,𓌒,pḏt
+T9,pDt,T10,T9a,pḏt
+T9A,pDt,Var of T9,𓌓,pḏt
+U1,mA,Sickle,𓌀,mꜣ
+U10,,Combination of U9 + M33,𓌾,
+U11,,Combination of S38 + U9,𓌿,
+U12,,Combination of D50 + U9,𓍀,
+U13,Sna,Plow,𓍁,šnꜥ
+U14,mAw,Two branches joined,𓍂,mꜣw
+U15,Hnk,Sledge,𓌨,ḥnk
+U16,mr,Hoe variant 2,𓍄,mr
+U16,mr,Sled with jackal head bearing a load,𓍄,mr
+U17,grg,Pick with pool,𓌧,grg
+U18,,Var. U17,𓍆,
+U18,,Aa7,U14,
+U19,nwt,Adze,𓌩,nwt
+U2,mA,Var. of U1,𓌴,mꜣ
+U20,nwt,Var. of U19,𓍈,nwt
+U21,stp,Adze with wood block,𓌫,stp
+U22,mAb,Chisel,𓍊,mꜣb
+U23,Abu,Chisel,𓌰,ꜣbu
+U24,HmA,Drill for stone,𓍍,ḥmꜣ
+U25,HmA,Var. of U24,𓍎,ḥmꜣ
+U26,wbA,Drill for beads,𓍏,wbꜣ
+U26,wbA,U24,U27,wbꜣ
+U27,wbA,Var. of U26,𓍐,wbꜣ
+U28,Df,Fire drill,𓌴,ḏf
+U29,Df,Fire drill variant,𓌵,ḏf
+U3,mA,Combination of U1 + D4,𓌵,mꜣ
+U30,Tnr,Kiln,𓍔,ṯnr
+U31,pHrr,Baker’s rake,𓍕,pḥrr
+U32,ti,Mortar and pestle,𓍖,ti
+U33,ti,Pestle,𓌻,ti
+U34,xAr,Spindle,𓍙,ḫꜣr
+U35,,Combination of U34 + I9,𓍚,
+U36,Hm,Club used in washing,𓍛,ḥm
+U36,Hm,Washing club,𓍛,ḥm
+U37,ard,Razor,𓍜,ꜥrd
+U38,mxAt,Scale,𓍝,mḫꜣt
+U39,iwnw,Scale post,𓍞,iwnw
+U4,mA,Combination of U1 + Aa11,𓌶,mꜣ
+U40,wTs,Var. of U39,𓌿,wṯs
+U41,gstj,Plumb bob,𓍠,gstj
+U5,mA,Var. of U4,𓌷,mꜣ
+U6,mr,Hoe,𓌥,mr
+U7,mr,Hoe variant,𓌦,mr
+U8,mr,Hoe,𓌼,mr
+U9,HqAt,Grain measure with grain streaming outwards,𓌡,ḥqꜣt
+V1,Sn,Coil of rope,𓍢,šn
+V10,sT,Oval cartouche,𓍫,sṯ
+V11,,End of cartouche,𓍸,
+V12,sS,String,𓍼,sš
+V13,t,Tethering rope,𓏏,t
+V14,t,Rope variant,𓍪,t
+V15,,Combination of V13 and D54,𓍦,
+V16,sS,Hobble for cattle,𓍬,sš
+V17,idr,S34,V18,idr
+V17,idr,Herdsman’s shelter,𓎃,idr
+V18,idr,Var. of V17,𓎄,idr
+V19,mD,Hobble for cattle,𓍯,mḏ
+V19,mD,Hobble coil,𓍯,mḏ
+V2,Sn,Combination of V1 + O34,𓍣,šn
+V20,mD,Hobble for cattle sans crossbar,𓎆,mḏ
+V21,mD,Combination of V20 + I10,𓎓,mḏ
+V22,mH,Whip,𓎔,mḥ
+V23,mH,Whip variant,𓎕,mḥ
+V23,mH,Whip variant,𓎕,mḥ
+V24,wD,Cord on Stick,𓎗,wḏ
+V25,wD,Var. of V24,𓎘,wḏ
+V25,wD,S42,U23,wḏ
+V26,iAr,Spool with thread,𓎙,iꜣr
+V27,iAr,Var. of V26,𓎚,iꜣr
+V28,H,Wick,𓎛,ḥ
+V29,wD,Swab,𓎜,wḏ
+V3,Sn,"Same as V2, but with two additional coils",𓍮,šn
+V30,nb,Basket,𓎟,nb
+V30,nb,Basket,𓎟,nb
+V31,k,Basket with handle,𓎡,k
+V31A,k,V31 reversed,𓎢,k
+V32,ms,Y2,Y1,ms
+V32,ms,Wicker satchel,𓎣,ms
+V33,ms,V7,V34,ms
+V33,ms,Linen bag,𓎤,ms
+V34,ms,Var. of V33,𓎥,ms
+V35,ms,M41,H8,ms
+V35,ms,Var. of V33,𓎧,ms
+V36,Hnw,Receptacle,𓎨,ḥnw
+V37,idH,Bandage,𓎩,idḥ
+V38,idH,Bandage,𓎩,idḥ
+V39,tA,Tie,𓎬,tꜣ
+V4,wA,Lasso,𓍥,wꜣ
+V5,Sn,Looped rope,𓍰,šn
+V6,Sr,Cord with loop facing downwards,𓍧,šr
+V7,Sn,Cord with loop facing upwards,𓍨,šn
+V8,Sn,Rope circle,𓍩,šn
+V9,Sn,Round cartouche,𓍶,šn
+W1,Hsmn,Alabaster bowl,𓎯,ḥsmn
+W10,bAst,Bowl,𓎸,bꜣst
+W10A,,Pot,𓎻,
+W11,g,Ring stand,𓎶,g
+W12,nst,Ring stand,𓎽,nst
+W13,nst,N41,T28,nst
+W13,nst,Pot,𓎾,nst
+W14,Hb,Water jar,𓎼,ḥb
+W15,Hb,Tall jar with water,𓎽,ḥb
+W16,Hb,Combination of W15 + W12,𓎾,ḥb
+W17,xnt,Tall jars in rack.,𓏀,ḫnt
+W18,Xnm,Jars in row,𓏁,ẖnm
+W19,mi,Milk jug,𓏂,mi
+W2,,Oil jar without ties,𓎰,
+W20,,Milk jug with leaf,𓏈,
+W21,irp,Wine jars,𓏉,irp
+W22,nw,Beer jugs,𓏃,nw
+W23,Hzt,Jug with handles,𓏄,ḥzt
+W24,nw,Bowl,𓏅,nw
+W25,ini,Combination of W24 + legs,𓏆,ini
+W3,Hsmn,Alabaster basin,𓎱,ḥsmn
+W4,,Combination of W3 + O22,𓎳,
+W5,,Combination of W3 + T28,𓎳,
+W6,,Vessel variant,𓎴,
+W7,mnhD,Granite bowl,𓎶,mnhḏ
+W8,,Var. of W7,𓎷,
+W9,nwt,Stone jug,𓎷,nwt
+X1,t,Small bread loaf,𓏏,t
+X2,tA,Tall bread loaf,𓏐,tꜣ
+X3,tA,Var. of X2,𓏑,tꜣ
+X4,pAt,Round bread,𓏒,pꜣt
+X4,pAt,Round bread,𓏒,pꜣt
+X5,pAt,Var. of X4,𓏕,pꜣt
+X6,,Round loaf with baker’s mark,𓏖,
+X7,,Half loaf of bread,𓏔,
+X8,di,Conical bread,𓏕,di
+Y1,mDAt,Papyrus scroll,𓏛,mḏꜣt
+Y1V,mDAt,Papyrus scroll (vertical),𓏜,mḏꜣt
+Y2,mDAt,Scroll tied,𓏜,mḏꜣt
+Y3,mnhD,Scribal kit,𓏝,mnhḏ
+Y4,mnhD,Y4 reversed,𓏞,mnhḏ
+Y5,mn,Game piece,𓏟,mn
+Y6,mn,Game piece,𓏡,mn
+Y7,bnt,Harp,𓏢,bnt
+Y8,sSSt,Sistrum,𓏣,sššt
+Z1,,Stroke,𓏤,
+Z10,,Var. of Z9,𓏵,
+Z11,ip,Crossed planks,𓏬,ip
+Z11,ip,Crossed planks,𓏬,ip
+Z2,,Three strokes,𓏥,
+Z3,,Three Z1 vertical strokes,𓏦,
+Z3A,,Z2 vertical,𓏫,
+Z4,y,Two diagonal strokes,𓏧,y
+Z4A,y,Two vertical strokes,𓏮,y
+Z5,,Diagonal stroke in hieratic,𓏯,
+Z6,,Hieratic var. of A13 and A14,𓏱,
+Z6,,T2,F33,
+Z7,w,From hieratic var. of G43.,𓏩,w
+Z8,,Oval,𓏳,
+Z9,,Crossing lines,𓏭,
+𓂋,,𓌪,𓂌,
+𓄣,,𓎶,𓎵,
+𓄥,,𓏇,𓍠,
+𓄭,,𓂏,𓂎,
+𓄲,,𓄶,𓄴,
+𓆅,,𓆼,𓆳,
+𓆎,,𓎻,𓎺,
+𓆩,,𓂐,𓄔,
+𓇤,,𓏐,𓏑,
+𓇥,,𓈔,𓄮,
+𓇩,,𓐫,𓐪,
+𓇯,,𓈛,𓈙,
+𓇳,,𓇸,𓇷,
+𓈇,,𓏘,𓈎,
+𓉽,,𓍞,𓐣,
+𓊅,,𓎛,𓐮,
+𓊏,,𓎂,𓊐,
+𓊕,,𓍶,𓏖,
+𓊪,,𓏳,𓊌,
+𓊹,,𓌏,𓊺,
+𓋝,,𓇬,𓇽,
+𓋭,,𓋊,𓋉,
+𓋽,,𓋁,𓋀,
+𓋾,,𓌙,𓋿,
+𓌀,,𓌁,𓋆,
+𓌒,,𓌔,𓌓,
+𓌟,,𓋈,𓌠,
+𓌡,,𓍇,𓍈,
+𓌱,,𓍒,𓍑,
+𓍄,,𓈐,𓐦,
+𓍆,,𓐓,𓍂,
+𓍏,,𓍍,𓍐,
+𓍛,,𓌑,𓌐,
+𓎃,,𓋹,𓎄,
+𓎅,,𓐎,𓐡,
+𓎕,,𓊷,𓊶,
+𓎘,,𓌂,𓍋,
+𓎟,,𓎢,𓎡,
+𓎣,,𓏝,𓏛,
+𓎤,,𓍱,𓎥,
+𓎧,,𓇫,𓆇,
+𓎾,,𓈞,𓌨,
+𓏒,,𓇿,𓏕,
+𓏱,,𓌈,𓄢,
+𓏶,,𓐧,𓌄,
+𓐖,,𓎙,𓐗,
+𓐙,,𓐛,𓐚,
+𓐞,,𓏵,𓏴,
+𓐬,,𓎨,𓐢,
