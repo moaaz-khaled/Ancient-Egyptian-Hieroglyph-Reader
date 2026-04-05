@@ -138,17 +138,15 @@ function renderResults(data) {
 
     document.getElementById('tableHint').style.display = 'none';
 
-    const tbody      = document.getElementById('signTableBody');
-    tbody.innerHTML  = '';
-    const glyphParts = data.glyphs ? data.glyphs.split(' ') : [];
+    const tbody     = document.getElementById('signTableBody');
+    tbody.innerHTML = '';
 
     for (let i = 0; i < data.per_sign.length; i++) {
-        const [code, phonetic, meaning] = data.per_sign[i];
-        const row      = document.createElement('tr');
-        const glyphStr = glyphParts[i] || '□';
-        row.innerHTML  = `
+        const [code, glyph, phonetic, meaning] = data.per_sign[i];
+        const row     = document.createElement('tr');
+        row.innerHTML = `
             <td><strong>${code.toUpperCase()}</strong></td>
-            <td class="glyph-cell">${glyphStr}</td>
+            <td class="glyph-cell">${glyph || '□'}</td>
             <td>${phonetic || '(det.)'}</td>
             <td>${meaning  || '-'}</td>
         `;
