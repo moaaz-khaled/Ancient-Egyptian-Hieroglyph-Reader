@@ -1,0 +1,868 @@
+code,phonetic,meaning,unicode,phonetic_tla,symbol_type
+A1,s,Seated man,𓀀,s,phonogram
+A10,,Man holding an oar,𓀌,,determinative
+A11,,Man with scepter and crook,𓀍,,determinative
+A12,,Man with bow and quiver,𓀎,,determinative
+A13,,Man with arms bound,𓀏,,determinative
+A14,,Man with bleeding head,𓀐,,determinative
+A14A,,Man with axe to head,𓀑,,determinative
+A15,,Man falling,𓀒,,determinative
+A16,,Man bowing,𓀓,,determinative
+A17,Xrd,Child with hand to mouth,𓀔,ẖrd,phonogram
+A17A,Xrd,Child sitting,𓀕,ẖrd,phonogram
+A18,,Child wearing red crown,𓀖,,determinative
+A19,,Aged man bending with stick,𓀗,,determinative
+A2,A,Man with hand to mouth,𓀁,ꜣ,phonogram
+A20,,Man leaning on forked stick,𓀘,,determinative
+A21,sr,Man with stick,𓀙,sr,phonogram
+A22,,Statue of man with stick and scepter,𓀚,,determinative
+A23,,King with stick and mace,𓀛,,determinative
+A24,,Man striking with stick in both hands,𓀜,,determinative
+A25,,Man striking with stick in one hand,𓀝,,determinative
+A26,a,Man gesturing,𓀞,ꜥ,phonogram
+A27,in,Man running,𓀟,in,phonogram
+A28,qAi,Man with arms raised up,𓀠,qꜣi,phonogram
+A29,,Man upside down,𓀡,,determinative
+A3,,Man sitting on heel,𓀂,,determinative
+A30,,Man with arms outstretched,𓀢,,determinative
+A31,,Man with arms turned behind him,𓀣,,determinative
+A32,,Dancing man,𓀤,,determinative
+A33,,Man with stick and bindle,𓀥,,determinative
+A34,ti,Man pounding in a mortar,𓀦,ti,phonogram
+A35,qd,Man building a wall,𓀧,qd,phonogram
+A36,fqA,Man straining into a vessel,𓀨,fqꜣ,phonogram
+A37,,Commoner form A36,𓀩,,determinative
+A38,,Man holding two animal emblems,𓀪,,determinative
+A39,,Man holding two giraffes,𓀫,,determinative
+A4,,Man with arms raised,𓀃,,determinative
+A40,,Seated god,𓀭,,determinative
+A40A,,,𓀮,,determinative
+A41,nswt,King in white crown,𓀮,nswt,phonogram
+A42,,Seated king holding flail,𓀯,,determinative
+A42A,,,𓀱,,determinative
+A43,,King wearing white crown of Upper Egypt,𓀰,,determinative
+A43A,,,𓀳,,determinative
+A44,,King holding flail and wearing white crown of Upper Egypt,𓀱,,determinative
+A45,bity,King wearing red crown of Lower Egypt.,𓀲,bity,phonogram
+A45A,,,𓀶,,determinative
+A46,,King holding flail and wearing red crown of Lower Egypt.,𓀳,,determinative
+A47,s3w,Seated shepherd,𓀴,s3w,phonogram
+A48,,Man holding knife,𓀹,,determinative
+A49,,Foreigner with stick,𓀺,,determinative
+A5,,Man hiding,𓀄,,determinative
+A50,Spsi,Noble seated on chair,𓀻,špsi,phonogram
+A51,Spsi,Noble seated on chair with flagellum,𓀼,špsi,phonogram
+A52,,Kneeling noble with flail,𓀽,,determinative
+A53,sah,Upright mummy,𓀾,sꜥh,phonogram
+A54,,Recumbent mummy,𓀿,,determinative
+A55,,Mummy on bed,𓁀,,determinative
+A59,,Man threatening stick with one hand,𓁄,,determinative
+A5A,,Man hiding variant,𓀅,,determinative
+A6,,Man purifying,𓀆,,determinative
+A6A,,Man purifying variant,𓀇,,determinative
+A6B,,Man purifying variant 2,𓀈,,determinative
+A7,,Fatigued man,𓀉,,determinative
+A8,hnw,Man performing hnw,𓀊,hnw,phonogram
+A9,,Man with basket on head,𓀋,,determinative
+AA1,,Placenta?,𓐍,,determinative
+AA10,,Unknown,𓐘,,determinative
+AA11,,Unknown sign,𓐙,,determinative
+AA11,,Unknown sign,𓐙,,determinative
+AA12,,Unknown,𓐚,,determinative
+AA13,ip,Crossed planks,𓏭,ip,phonogram
+AA14,,Unknown,𓐜,,determinative
+AA15,Dr,Unclassified variant,𓏮,ḏr,phonogram
+AA16,,Short form Aa13,𓐞,,determinative
+AA16,,Z10,Z9,,determinative
+AA17,,Back of something?,𓐟,,determinative
+AA18,,Var. of Aa17,𓐠,,determinative
+AA19,,Unknown,𓐡,,determinative
+AA2,nD,Pustule or gland?,𓐁,nḏ,phonogram
+AA20,,Unknown,𓐢,,determinative
+AA21,,Unknown,𓐣,,determinative
+AA22,,Combination of Aa21 + D36,𓐤,,determinative
+AA23,,Warp between stakes?,𓐥,,determinative
+AA24,,Var. Aa23,𓐦,,determinative
+AA25,,Unknown,𓐧,,determinative
+AA26,,Unknown,𓐨,,determinative
+AA27,,Unclassified sign,𓐩,,determinative
+AA28,,Unclassified sign,𓐪,,determinative
+AA29,,Var. of Aa28,𓐫,,determinative
+AA3,,Aa2 with substance issuing,𓐏,,determinative
+AA30,,Frieze element?,𓐬,,determinative
+AA30,,V36,Aa20,,determinative
+AA31,,Var. of Aa30,𓐭,,determinative
+AA4,,Pot,𓐐,,determinative
+AA5,xnt,Combination sign,𓐅,ḫnt,phonogram
+AA6,,Unknown,𓐒,,determinative
+AA7,,Unknown,𓐓,,determinative
+AA8,,Irrigation canal?,𓐖,,determinative
+AA8,,V26,Aa9,,determinative
+AA9,,Unknown,𓐗,,determinative
+B1,st,Seated woman,𓁐,st,phonogram
+B2,,Pregnant woman,𓁑,,determinative
+B3,msi,Woman giving birth,𓁒,msi,phonogram
+B4,,Woman nursing child,𓁓,,determinative
+B5,,Woman with hand to mouth,𓁔,,determinative
+B6,,Woman and seated child,𓁕,,determinative
+B7,,Seated queen holding flower,𓁖,,determinative
+C1,ra,God with sun-disk and uraeus,𓁚,rꜥ,logogram
+C10,mAat,Goddess with feather,𓁦,mꜣꜥt,logogram
+C10A,mAat,Goddess with feather holding ʿnḫ,𓁧,mꜣꜥt,logogram
+C11,HH,Heh figure,𓁨,ḥḥ,logogram
+C12,imn,Amun,𓁩,imn,logogram
+C17,imn,God with double plumes,𓁮,imn,logogram
+C18,,God with was scepter,𓁯,,logogram
+C19,ptH,Ptah,𓁰,ptḥ,logogram
+C2,ra,God with falcon head and sun-disk holding ʿnḫ,𓁜,rꜥ,logogram
+C20,Wsir,God mummiform,𓁱,Wsir,logogram
+C3,DHwty,God with ibis head,𓁟,ḏḥwty,logogram
+C4,Xnmw,God with ram head,𓁠,ẖnmw,logogram
+C5,ra,God with ram head holding ʿnḫ,𓁡,rꜥ,logogram
+C6,inpw,God with jackal head,𓁢,inpw,logogram
+C7,stX,God with Seth head,𓁣,stẖ,logogram
+C8,Mnw,Min,𓁤,Mnw,logogram
+C9,Hwt-Hr,Goddess with horned sun-disk,𓁥,ḥwt-ḥr,logogram
+D1,tp,Head,𓁶,tp,phonogram
+D10,wDAt,Eye with falcon’s head marking,𓂀,wḏꜣt,phonogram
+D11,irt,White part of w3ḏt eye,𓂁,irt,phonogram
+D12,irt,Pupil of eye,𓂂,irt,phonogram
+D13,inh,Eyebrow,𓂃,inh,phonogram
+D14,,White part of w3ḏt eye,𓂄,,determinative
+D15,,Part of w3ḏt eye markings,𓂅,,determinative
+D16,,Part of w3ḏt eye markings,𓂆,,determinative
+D17,tit,Markings of wedjat eye,𓂇,tit,phonogram
+D18,msDr,Ear,𓂈,msḏr,phonogram
+D19,fnD,"Eye, nose, and cheek",𓂉,fnḏ,phonogram
+D2,Hr,Face,𓁷,ḥr,phonogram
+D20,fnD,Nose with eye,𓂊,fnḏ,phonogram
+D21,r,Mouth,𓂋,r,phonogram
+D21,r,Mouth,𓂋,r,phonogram
+D22,rwy,Mouth with two lines,𓂌,rwy,phonogram
+D23,Xmt,Mouth with three lines,𓂍,ẖmt,phonogram
+D24,spt,Upper lip with teeth,𓂎,spt,phonogram
+D25,spty,Lips with teeth,𓂏,spty,phonogram
+D26,,Lips spewing water,𓂐,,determinative
+D27,mn,Breast,𓂑,mn,phonogram
+D27A,mn,Breast variant,𓂒,mn,phonogram
+D28,kA,Two arms upraised,𓂓,kꜣ,phonogram
+D29,kA,Combination D28 + T3,𓂔,kꜣ,phonogram
+D3,Swt,Hair,𓁸,šwt,phonogram
+D30,kA,Combination D28 + T28,𓂕,kꜣ,phonogram
+D31,Hm-kA,Combination of signs D32 and U36,𓂖,ḥm-kꜣ,phonogram
+D32,H3,Two arms embracing,𓂗,ḥ3,phonogram
+D33,Xni,Arms holding oar,𓂙,ẖni,phonogram
+D34,H3,Arms with shield and axe,𓂚,ḥ3,phonogram
+D34A,,Arms with shield and mace,𓂛,,determinative
+D35,n,Negative arms,𓂜,n,phonogram
+D36,a,Arm,𓂝,ꜥ,phonogram
+D37,mi,Arm holding sign X8,𓂞,mi,phonogram
+D38,di,Arm holding bread,𓂟,di,phonogram
+D39,di,Arm holding W24,𓂠,di,phonogram
+D4,ir,Eye,𓁹,ir,phonogram
+D40,,Arm holding stick,𓂡,,determinative
+D41,n,Arm with downward facing palm,𓂢,n,phonogram
+D42,mH,Arm with downward facing palm,𓂣,mḥ,phonogram
+D43,Xwi,Arm with flail,𓂤,ẖwi,phonogram
+D44,Xrp,Arm with scepter sekhem,𓂥,ẖrp,phonogram
+D45,Dsr,Arm with brush,𓂦,ḏsr,phonogram
+D46,D,Hand,𓂧,ḏ,phonogram
+D46A,idt,Hand with water,𓂨,idt,phonogram
+D47,Drt,Hand flat,𓂩,ḏrt,phonogram
+D48,Ssp,Palm without thumb,𓂪,šsp,phonogram
+D49,ams,Fist,𓂫,ꜥms,phonogram
+D5,,Eye with paint,𓁺,,determinative
+D50,Db,Vertical finger,𓂭,ḏb,phonogram
+D51,Db,Horizontal finger,𓂮,ḏb,phonogram
+D52,mt,Phallus,𓂱,mt,phonogram
+D53,bAH,Phallus with liquid,𓂲,bꜣḥ,phonogram
+D54,rd,Legs walking,𓂻,rd,phonogram
+D55,rd,Legs walking (reverse of D54),𓂼,rd,phonogram
+D56,b,Leg,𓂾,b,phonogram
+D57,,Leg with knife,𓂿,,determinative
+D58,b,Foot,𓃀,b,phonogram
+D59,,Foot with vase,𓃁,,determinative
+D6,,Eye with eyebrow,𓁻,,determinative
+D60,wab,Foot with water streaming,𓃂,wꜥb,phonogram
+D61,s3H,Toes,𓃃,s3ḥ,phonogram
+D62,s3H,Var. D61,𓃄,s3ḥ,phonogram
+D63,s3H,Var. D61,𓃅,s3ḥ,phonogram
+D7,,Eye with paint lines,𓁼,,determinative
+D8,,Eye with markings,𓁽,,determinative
+D9,rmi,Eye weeping,𓁿,rmi,phonogram
+E1,kA,Bull,𓃒,kꜣ,phonogram
+E10,rr,Pig,𓃛,rr,phonogram
+E11,iwiw,Dog,𓃜,iwiw,phonogram
+E12,rr,Pig,𓃟,rr,phonogram
+E13,miw,Cat,𓃞,miw,phonogram
+E14,tsm,Dog on standard,𓃟,tsm,phonogram
+E15,sAb,Recumbent jackal,𓃢,sꜣb,phonogram
+E16,inpw,Recumbent Jackal on shrine,𓃣,inpw,phonogram
+E17,sAb,Jackal,𓃥,sꜣb,phonogram
+E18,inpw,Jackal on standard R12,𓃧,inpw,phonogram
+E19,,O.K. form of last,𓃨,,determinative
+E2,kA,Bull preparing to charge,𓃓,kꜣ,phonogram
+E20,stX,Seth animal,𓃩,stẖ,phonogram
+E21,mAi,Recumbent Seth animal,𓃭,mꜣi,phonogram
+E22,mAi,Prowling lion,𓃬,mꜣi,phonogram
+E23,rw,Recumbent lion,𓃯,rw,phonogram
+E24,AbS,Panther,𓃮,ꜣbš,phonogram
+E25,dbt,Hippopotamus,𓃰,dbt,phonogram
+E26,Abu,Elephant,𓃱,ꜣbu,phonogram
+E27,mmy,Giraffe,𓃲,mmy,phonogram
+E28,iAw,Goat,𓃳,iꜣw,phonogram
+E29,nfr,Long-horned bull,𓃴,nfr,phonogram
+E3,iHt,Cow with horns,𓃔,iḥt,phonogram
+E30,nAt,Ibex,𓃵,nꜣt,phonogram
+E31,,Goat with collar,𓃶,,determinative
+E32,iAn,Baboon,𓃷,iꜣn,phonogram
+E33,gfw,Monkey,𓃸,gfw,phonogram
+E34,wn,Hare,𓃻,wn,phonogram
+E4,iHt,Sacred cow,𓃕,iḥt,phonogram
+E5,,Cow with calf,𓃖,,determinative
+E6,Htr,Horse,𓃗,ḥtr,phonogram
+E7,aA,Donkey,𓃘,ꜥꜣ,phonogram
+E8,ib,Kid,𓃙,ib,phonogram
+E9,iw,Newborn bubalis,𓃚,iw,phonogram
+F1,Xr,Head of ox,𓃾,ẖr,phonogram
+F10,wp,Head and neck of animal,𓄈,wp,phonogram
+F11,wp,O.K. form of F10,𓄉,wp,phonogram
+F12,wsr,Head and neck of jackal,𓄊,wsr,phonogram
+F13,wp,Horns of ox,𓄋,wp,phonogram
+F14,,Combination of F13 and M4,𓄌,,determinative
+F15,,Combination of F14 and N5,𓄍,,determinative
+F16,db,Horn,𓄎,db,phonogram
+F17,db,Combination of F16 and D60 water vessel,𓄏,db,phonogram
+F18,bH,Tusk of elephant,𓄑,bḥ,phonogram
+F19,nDt,Jawbone of ox,𓄒,nḏt,phonogram
+F2,idn,Head of ox with horns,𓃿,idn,phonogram
+F20,ns,Tongue,𓄓,ns,phonogram
+F21,msDr,Ear of ox,𓄔,msḏr,phonogram
+F22,pHwy,Hindquarters of leopard or lion,𓄖,pḥwy,phonogram
+F23,kfA,Foreleg of ox,𓄗,kfꜣ,phonogram
+F24,kfA,Reverse of F23,𓄘,kfꜣ,phonogram
+F25,wHmt,Leg and hoof of ox,𓄙,wḥmt,phonogram
+F26,km,Skin with tail,𓄚,km,phonogram
+F27,idb,Skin of cow,𓄛,idb,phonogram
+F28,,Skin of goat,𓄜,,determinative
+F29,sti,Combination of F28 + arrow,𓄝,sti,phonogram
+F3,dbt,Head of hippopotamus,𓄁,dbt,phonogram
+F30,inm,Inflated skin,𓄞,inm,phonogram
+F31,ms,Three fox skins,𓄟,ms,phonogram
+F32,XpS,Animal belly and tail,𓄡,ẖpš,phonogram
+F33,sd,Tail,𓄢,sd,phonogram
+F34,ib,Heart,𓄣,ib,phonogram
+F34,ib,Heart,𓄣,ib,phonogram
+F35,nfr,Heart and windpipe,𓄤,nfr,phonogram
+F36,smA,Lung and windpipe,𓄥,smꜣ,phonogram
+F36,smA,Lung and windpipe,𓄥,smꜣ,phonogram
+F37,imAt,Backbone and ribs,𓄦,imꜣt,phonogram
+F38,imAt,Combination F37 + D40,𓄧,imꜣt,phonogram
+F39,Abd,Backbone and spinal cord,𓄨,ꜣbd,phonogram
+F4,tp,Forepart of lion,𓄂,tp,phonogram
+F40,Aw,Backbone and spinal cord at each end,𓄩,ꜣw,phonogram
+F41,Aqt,Vertebrae,𓄪,ꜣqt,phonogram
+F42,spr,Rib,𓄭,spr,phonogram
+F42,spr,Rib,𓄭,spr,phonogram
+F43,spr,Combination ribs,𓄮,spr,phonogram
+F44,iwa,Leg bone with meat,𓄯,iwꜥ,phonogram
+F45,idn,Heifer uterus,𓄰,idn,phonogram
+F46,Xr,Intestine,𓄲,ẖr,phonogram
+F46,Xr,Intestine,𓄲,ẖr,phonogram
+F47,qbb,Intestine coiled,𓄳,qbb,phonogram
+F48,Xr,Var. of F46,𓄴,ẖr,phonogram
+F49,Xr,Var. of F46,𓄷,ẖr,phonogram
+F5,Ss3,Head of bubalis,𓄃,šs3,phonogram
+F50,,Combination of F46 and S29,𓄸,,determinative
+F51,isft,Piece of flesh,𓄵,isft,phonogram
+F52,Hs,Excrement,𓄽,ḥs,phonogram
+F6,,Forepart of bubalis,𓄄,,determinative
+F7,Sr,Head of ram,𓄅,šr,phonogram
+F8,Sr,Forepart of ram,𓄆,šr,phonogram
+F9,fAi,Head of leopard,𓄇,fꜣi,phonogram
+G1,A,Egyptian vulture,𓄿,ꜣ,phonogram
+G10,Hr,Falcon in sacred bark,𓅈,ḥr,phonogram
+G11,Hr,Falcon with two plumes,𓅉,ḥr,phonogram
+G12,Hr,Falcon image with flail,𓅊,ḥr,phonogram
+G13,Hr,Falcon image with S9,𓅏,ḥr,phonogram
+G14,mt,Vulture,𓅐,mt,phonogram
+G15,,Vulture with flail,𓅑,,determinative
+G16,nbty,Vulture and cobra,𓅒,nbty,phonogram
+G17,m,Owl,𓅓,m,phonogram
+G18,mm,Two owls,𓅔,mm,phonogram
+G19,m,Combination of G17 + D37,𓅕,m,phonogram
+G2,AA,Two vultures,𓅀,ꜣꜣ,phonogram
+G20,m,Combination of G17 + D36,𓅔,m,phonogram
+G21,nH,Guinea fowl,𓅕,nḥ,phonogram
+G22,Dbt,Hoopoe,𓅖,ḏbt,phonogram
+G23,rxt,Lapwing,𓅗,rḫt,phonogram
+G24,rxt,Lapwing crested,𓅘,rḫt,phonogram
+G25,ax,Crested ibis,𓅛,ꜥḫ,phonogram
+G26,DHwty,Sacred ibis on standard,𓅜,ḏḥwty,phonogram
+G26A,DHwty,Sacred ibis,𓅞,ḏḥwty,phonogram
+G27,dSr,Flamingo,𓅝,dšr,phonogram
+G28,gm,Black ibis,𓅞,gm,phonogram
+G29,b3,Jabiru,𓅟,b3,phonogram
+G3,Ai,Combination of G1 + U1,𓅁,ꜣi,phonogram
+G30,b3b3,Three jabirus,𓅠,b3b3,phonogram
+G31,b3,Heron,𓅣,b3,phonogram
+G32,bnw,Heron on perch,𓅤,bnw,phonogram
+G33,snw,Egret,𓅥,snw,phonogram
+G34,nj,Ostrich,𓅦,nj,phonogram
+G35,aq,Cormorant,𓅥,ꜥq,phonogram
+G36,wr,Swallow,𓅦,wr,phonogram
+G37,bin,Sparrow,𓅧,bin,phonogram
+G38,gb,White goose,𓅨,gb,phonogram
+G39,sA,Pintail duck,𓅩,sꜣ,phonogram
+G4,nrt,Buzzard,𓅂,nrt,phonogram
+G40,pA,Duck flying,𓅪,pꜣ,phonogram
+G41,xn,Duck landing,𓅫,ḫn,phonogram
+G42,wSA,Fattened bird,𓅰,wšꜣ,phonogram
+G43,w,"Quail chick, var. Z7",𓅱,w,phonogram
+G44,ww,Two quail chicks,𓅲,ww,phonogram
+G45,wA,Combination of G43 + D36,𓅳,wꜣ,phonogram
+G46,w,Combination of G43 + U1,𓅶,w,phonogram
+G47,TAw,Duckling,𓅵,ṯꜣw,phonogram
+G48,,Three ducklings in nest,𓅸,,determinative
+G49,,Ducks’ heads protruding from pool,𓅹,,determinative
+G5,Hr,Falcon,𓅃,ḥr,phonogram
+G50,rXty,Two plovers,𓅺,rẖty,phonogram
+G51,,Bird pecking fish,𓅻,,determinative
+G52,,Goose feeding,𓅼,,determinative
+G53,bA,Human headed bird,𓅽,bꜣ,phonogram
+G54,wSm,Plucked bird,𓅹,wšm,phonogram
+G6,Hr,Falcon with flail,𓅄,ḥr,phonogram
+G7,Hr,Falcon on standard,𓅅,ḥr,phonogram
+G7A,Hr,"Var of G7, Falcon in boat",𓅇,ḥr,phonogram
+G7B,Hr,"Var of G7, G7a",𓅈,ḥr,phonogram
+G8,Hr,Combination of G5 + S12,𓅆,ḥr,phonogram
+G9,Hr,Falcon with sun disk,𓅇,ḥr,phonogram
+H1,pA,Head of duck,𓅿,pꜣ,phonogram
+H2,pq,Head of crested bird,𓆀,pq,phonogram
+H3,,Head of spoonbill,𓆁,,determinative
+H4,nrt,Head of vulture,𓆂,nrt,phonogram
+H5,DnH,Wing,𓆃,ḏnḥ,phonogram
+H6,Sw,Feather,𓆄,šw,phonogram
+H6A,,M12,M4,,determinative
+H7,,Claw,𓆅,,determinative
+H8,swt,Egg,𓆇,swt,phonogram
+I1,mzH,Lizard,𓆈,mzḥ,phonogram
+I10,D,Cobra,𓆓,ḏ,phonogram
+I11,,Cobra with feather,𓆔,,determinative
+I12,D,Cobra rearing,𓆔,ḏ,phonogram
+I13,,Combination of I12 + V30,𓆕,,determinative
+I14,D,Snake,𓆗,ḏ,phonogram
+I15,,Snake with feather,𓆘,,determinative
+I2,Styw,Turtle,𓆉,štyw,phonogram
+I3,sbk,Crocodile,𓆊,sbk,phonogram
+I4,sbk,Crocodile on shrine,𓆋,sbk,phonogram
+I5,sbk,Crocodile with curved tail,𓆌,sbk,phonogram
+I6,qmA,Crocodile scales,𓆎,qmꜣ,phonogram
+I6,qmA,Crocodile scales,𓆎,qmꜣ,phonogram
+I7,wHm,Frog,𓆏,wḥm,phonogram
+I8,Hfn,Tadpole,𓆐,ḥfn,phonogram
+I9,f,Horned viper,𓆑,f,phonogram
+K1,in,Tilapia fish,𓆛,in,phonogram
+K2,bw,Barbel fish,𓆜,bw,phonogram
+K3,ad,Mullet fish,𓆝,ꜥd,phonogram
+K4,XA,Oxyrhynchus fish,𓆞,ẖꜣ,phonogram
+K5,rA,Pike fish,𓆟,rꜣ,phonogram
+K6,,Fish scale,𓆠,,determinative
+K7,HzmA,Blowfish,𓆡,ḥzmꜣ,phonogram
+L1,xpr,Scarab beetle,𓆣,ḫpr,phonogram
+L2,bit,Bee,𓆤,bit,phonogram
+L3,Aff,Fly,𓆥,ꜣff,phonogram
+L4,snHm,Locust,𓆦,snḥm,phonogram
+L5,spt,Centipede,𓆧,spt,phonogram
+L6,mHnt,Shell,𓆩,mḥnt,phonogram
+L6,mHnt,Shell,𓆩,mḥnt,phonogram
+L7,srqt,Scorpion,𓆫,srqt,phonogram
+M1,xt,Tree,𓇁,ḫt,phonogram
+M10,xA,Lotus bud,𓆹,ḫꜣ,phonogram
+M11,,Flower and stem,𓆻,,determinative
+M12,xA,Lotus plant,𓆱,ḫꜣ,phonogram
+M13,wAD,Papyrus stem,𓇲,wꜣḏ,phonogram
+M14,,Combination of M13 and I10,𓇳,,determinative
+M15,,Papyrus clump with downward facing buds.,𓇴,,determinative
+M16,iAdt,Papyrus clump,𓆵,iꜣdt,phonogram
+M17,i,Reed leaf,𓇋,i,phonogram
+M18,i,Combination of M17 + D54,𓇌,i,phonogram
+M19,,Conical cakes between signs M17 and U36,𓇎,,determinative
+M2,Hn,Plant,𓆧,ḥn,phonogram
+M20,sm,Reed field,𓇍,sm,phonogram
+M21,sm,Reed field with root,𓇐,sm,phonogram
+M22,nn,Rush with shoots,𓇓,nn,phonogram
+M23,sw,Sedge,𓇔,sw,phonogram
+M24,rsw,Combination sedge + mouth,𓇕,rsw,phonogram
+M25,,Combination of M26 + M24,𓇖,,determinative
+M26,Smaw,Upper Egypt sedge,𓇗,šmꜥw,phonogram
+M27,,Combination of M26 + D36,𓇘,,determinative
+M28,,Combination of M26 + V20,𓇙,,determinative
+M29,nDm,Pod,𓇛,nḏm,phonogram
+M3,Xt,Branch,𓆨,ẖt,phonogram
+M30,bnr,Root,𓇜,bnr,phonogram
+M31,rDw,Rhizome,𓇝,rḏw,phonogram
+M32,rDw,Var of M31,𓇟,rḏw,phonogram
+M33,it,Grain,𓇠,it,phonogram
+M34,bdt,Emmer sheaf,𓇣,bdt,phonogram
+M35,it,X2,X3,it,phonogram
+M35,it,Grain heap,𓇤,it,phonogram
+M36,mHy,N34,F43,mḥy,phonogram
+M36,mHy,Flax bundle,𓇥,mḥy,phonogram
+M37,mHy,Flax bundle with stems,𓇤,mḥy,phonogram
+M38,mHy,Flax bundle,𓇧,mḥy,phonogram
+M39,Snwt,Basket of fruit or grain,𓇨,šnwt,phonogram
+M4,rnpt,Stripped palm branch,𓆳,rnpt,phonogram
+M40,iSt,Bundle of reeds,𓇩,išt,phonogram
+M40,iSt,Bundle of reeds,𓇩,išt,phonogram
+M41,xt,Wood log,𓇫,ḫt,phonogram
+M42,wAD,Flower,𓇷,wꜣḏ,phonogram
+M43,iArrt,Grape vines on props,𓇭,iꜣrrt,phonogram
+M44,snb,Thorn,𓇮,snb,phonogram
+M5,rnpt,Combination of M4 + X1,𓆴,rnpt,phonogram
+M6,rnpt,Combination of M4 + D21,𓆵,rnpt,phonogram
+M7,rnpt,Combination of M4 + Q3,𓆶,rnpt,phonogram
+M8,3Xt,Pool with lilies,𓆷,3ẖt,phonogram
+M9,ssn,Lotus flower,𓆸,ssn,phonogram
+N1,pt,Sky,𓇯,pt,phonogram
+N1,pt,Sky,𓇯,pt,phonogram
+N10,iaH,Var of N9,𓇸,iꜥḥ,phonogram
+N11,3bd,Crescent moon,𓇹,3bd,phonogram
+N12,3bd,Var. of N11,𓇺,3bd,phonogram
+N13,,Combination of half of N11 and N14,𓇻,,determinative
+N14,sbA,Star,𓇼,sbꜣ,phonogram
+N15,Dw3t,Star in circle,𓇽,ḏw3t,phonogram
+N16,tA,Flat land with grain,𓇿,tꜣ,phonogram
+N17,tA,Flat land variant,𓈀,tꜣ,phonogram
+N18,iw,Strip of sand,𓇾,iw,phonogram
+N19,iwy,Two strips of sand,𓈃,iwy,phonogram
+N2,grH,Sky with broken scepter,𓇰,grḥ,phonogram
+N20,wDb,Tongue of land,𓈄,wḏb,phonogram
+N21,wDb,Tongue of land,𓈅,wḏb,phonogram
+N22,wDb,Tongue of land,𓈆,wḏb,phonogram
+N23,mr,Irrigation canal,𓈇,mr,phonogram
+N23,mr,Irrigation canal,𓈇,mr,phonogram
+N24,spAt,Irrigation canal system,𓈈,spꜣt,phonogram
+N25,xAst,Mountain rande,𓈋,ḫꜣst,phonogram
+N26,Dw,Mountain,𓈌,ḏw,phonogram
+N27,Axt,Sunrise over mountain,𓈍,ꜣḫt,phonogram
+N28,xa,Sun rising over mountain,𓈎,ḫꜥ,phonogram
+N29,q,Sandy slope,𓈏,q,phonogram
+N3,,Sky with scepter,𓇱,,determinative
+N30,,Hill with shrubs,𓈐,,determinative
+N31,wAt,Road bordered by shrubs,𓈑,wꜣt,phonogram
+N32,,"Lump of clay, Var. Aa2 and F52.",𓈑,,determinative
+N33,Say,Grain of sand,𓈓,šꜥy,phonogram
+N34,Hmt,Metal Ingot,𓈔,ḥmt,phonogram
+N35,n,Water ripple,𓈖,n,phonogram
+N35A,nww,Three ripples,𓈗,nww,phonogram
+N36,mr,Canal,𓈘,mr,phonogram
+N37,S,Pool,𓈙,š,phonogram
+N38,S,Pool variant,𓈚,š,phonogram
+N39,S,Pool with peg,𓈛,š,phonogram
+N4,Snyt,Sky with rain,𓇲,šnyt,phonogram
+N40,,Combination of N37 and D54,𓈜,,determinative
+N41,bw,Well with water,𓈥,bw,phonogram
+N42,Hw,Var. of N41,𓈦,ḥw,phonogram
+N5,ra,Sun disk,𓇳,rꜥ,phonogram
+N5,ra,Sun disk,𓇳,rꜥ,phonogram
+N6,ra,Sun with uraeus,𓇴,rꜥ,phonogram
+N7,ra,Combination of N5 + T28,𓇸,rꜥ,phonogram
+N8,3Xw,Sun with rays,𓇶,3ẖw,phonogram
+N9,iaH,Moon,𓇷,iꜥḥ,phonogram
+O1,pr,House plan,𓉐,pr,phonogram
+O10,Hwt,Combination of O6 + G5,𓉙,ḥwt,phonogram
+O12,aH,Palace with battlements,𓉥,ꜥḥ,phonogram
+O13,inbt,Enclosure with battlements,𓉦,inbt,phonogram
+O14,inbt,Var. of O13,𓉧,inbt,phonogram
+O15,,Walled enclosure with buttresses + W10 + X1,𓉨,,logogram
+O16,sbA,Gateway with serpents,𓉩,sbꜣ,phonogram
+O17,sbA,Var. of O16,𓉪,sbꜣ,phonogram
+O18,kAr,Shrine in profile,𓉫,kꜣr,phonogram
+O19,kAr,Shrine in profile with poles,𓉬,kꜣr,phonogram
+O2,pr,Combination of O1 + T3,𓉑,pr,phonogram
+O20,Hwt,Shrine,𓉭,ḥwt,phonogram
+O21,,Shrine Facade,𓉯,,logogram
+O22,,Booth supported by pole,𓉱,,logogram
+O23,,Double platform,𓉲,,logogram
+O24,mr,Pyramid surrounded by wall,𓉡,mr,phonogram
+O25,txn,Obelisk,𓉴,tḫn,phonogram
+O26,wD,Stela,𓉶,wḏ,phonogram
+O27,,Hall with columns,𓉸,,logogram
+O28,iwn,Column with tenon,𓉣,iwn,phonogram
+O29,aA,Wooden column,𓉥,ꜥꜣ,phonogram
+O29V,aA,Vertical wood column,𓉼,ꜥꜣ,phonogram
+O3,pr,Combination of O1 + P8 + X3 + W22,𓉒,pr,phonogram
+O30,,Supporting pole,𓉽,,logogram
+O30,,Supporting pole,𓉽,,logogram
+O31,sbA,Door variant,𓉧,sbꜣ,phonogram
+O32,sbA,Gateway,𓊀,sbꜣ,phonogram
+O33,aH,Palace or tomb facade,𓊁,ꜥḥ,phonogram
+O34,z,Door bolt,𓉻,z,phonogram
+O35,,Combination of O34 + D54,𓊄,,logogram
+O36,inbt,Wall,𓊅,inbt,phonogram
+O36,inbt,V28,Aa32,inbt,phonogram
+O37,,Falling wall,𓊊,,logogram
+O38,qnbt,Corner of wall,𓊋,qnbt,phonogram
+O39,,Stone slab,𓉷,,logogram
+O4,H,Reed shelter,𓉔,ḥ,phonogram
+O40,rd,Stairway,𓊍,rd,phonogram
+O41,,Double stairway,𓊎,,logogram
+O42,Szp,Fence,𓊏,šzp,phonogram
+O42,Szp,Fence,𓊏,šzp,phonogram
+O43,Szp,Var. of O42,𓊐,šzp,phonogram
+O44,,Min emblem,𓊑,,logogram
+O45,,Domed building,𓊒,,logogram
+O46,,Var. of O45,𓊓,,logogram
+O47,,Enclosed mound,𓊔,,logogram
+O48,,Enclosure variant,𓊕,,logogram
+O48,,Enclosure variant,𓊕,,logogram
+O49,niwt,Town with crossroads,𓊖,niwt,phonogram
+O5,,Combination shelter,𓉓,,logogram
+O50,sp,Threshing floor with grain,𓊗,sp,phonogram
+O51,,Grain mound on mud floor,𓊚,,logogram
+O6,Hwt,Plan of rectangular enclosure,𓉕,ḥwt,phonogram
+O7,,Enclosure variant,𓉖,,logogram
+O8,,Combination of O7 + O29,𓉟,,logogram
+O9,,Combination of O7 + O30,𓉘,,logogram
+P1,dpt,Boat on water,𓊛,dpt,phonogram
+P10,xrw,Steering oar,𓊦,ḫrw,phonogram
+P11,,Mooring post,𓊧,,determinative
+P1A,,Boat upside down,𓊜,,determinative
+P2,xnt,Ship sailing,𓊝,ḫnt,phonogram
+P3,wia,Sacred barque,𓊝,wiꜥ,phonogram
+P4,,Boat with net,𓊠,,determinative
+P5,nfw,Sail,𓊡,nfw,phonogram
+P6,aHw,Mast,𓊢,ꜥḥw,phonogram
+P7,,Combination of P6 +D36,𓊣,,determinative
+P8,xrw,Oar,𓊩,ḫrw,phonogram
+P9,,Combination of P8 + I9,𓊥,,determinative
+Q1,st,Seat,𓊪,st,phonogram
+Q2,st,Portable seat,𓊫,st,phonogram
+Q3,p,Stool,𓊬,p,phonogram
+Q3,p,Stool,𓊬,p,phonogram
+Q4,wrs,Headrest,𓊫,wrs,phonogram
+Q5,qbH,Chest,𓊬,qbḥ,phonogram
+Q6,qrsw,Coffin,𓊭,qrsw,logogram
+Q7,xt,Brazier with flame,𓊰,ḫt,phonogram
+R1,xAt,Table with jug and loaves,𓊯,ḫꜣt,logogram
+R10,,Combination of R8 + T28 + N29,𓊻,,logogram
+R11,Dd,Djed pillar,𓊽,ḏd,phonogram
+R12,iwn,Standard,𓊾,iwn,phonogram
+R13,Hr,Combination of G5 + R14,𓊿,ḥr,logogram
+R14,imntt,Feather on standard,𓋀,imntt,logogram
+R15,iAbtt,Spear as standard,𓋁,iꜣbtt,logogram
+R16,sxm,Scepter with feathers,𓋂,sḫm,logogram
+R17,spAt,Feathered wig with pole,𓋄,spꜣt,logogram
+R18,,Var. of R17,𓋅,,logogram
+R19,,Combination of S40 + feather,𓋆,,determinative
+R2,,Table with bread slices,𓊰,,logogram
+R20,sSSt,Seshat emblem,𓋇,sššt,logogram
+R21,,Var. of R20,𓋈,,logogram
+R22,mnw,Min emblem,𓋉,mnw,phonogram
+R23,,Var. of R22,𓋊,,determinative
+R24,,Combination flag,𓊿,,determinative
+R25,,Var. of R24,𓋌,,determinative
+R3,,Low table with Jug and loaves,𓊲,,logogram
+R4,Htp,Bread loaf on mat,𓊵,ḥtp,phonogram
+R5,kp,Censer,𓊶,kp,logogram
+R6,kp,Var. of R5,𓊷,kp,logogram
+R7,kp,Incense bowl,𓊸,kp,logogram
+R8,nTr,Flag,𓊹,nṯr,phonogram
+R8,nTr,Flag,𓊹,nṯr,phonogram
+R9,,Combination of R8 + V33,𓊺,,logogram
+S1,HDt,White crown of Upper Egypt,𓋑,ḥḏt,logogram
+S10,mDH,Headband,𓋜,mḏḥ,phonogram
+S11,wsx,Collar,𓋝,wsḫ,phonogram
+S11,wsx,M42,N15,wsḫ,phonogram
+S12,nbw,Collar of beads,𓋡,nbw,logogram
+S13,,Combination of S12 + D58,𓋟,,determinative
+S14,,Combination of S12 + T3,𓋠,,logogram
+S14A,,Combination of S12 + S40,𓋡,,determinative
+S15,mkt,Faience pectoral,𓋣,mkt,logogram
+S16,mkt,Var. of S15,𓋤,mkt,logogram
+S17,mkt,Var of S15,𓋥,mkt,logogram
+S18,wsx,Bead necklace,𓋧,wsḫ,logogram
+S19,sT,Necklace and cylinder seal,𓋨,sṯ,logogram
+S2,HDt,Combination of S1 + V30,𓋒,ḥḏt,logogram
+S20,sT,Necklace and cylinder seal,𓋩,sṯ,logogram
+S21,anx,Ring,𓋭,ꜥnḫ,phonogram
+S22,tpw,Shoulder knot,𓋫,tpw,phonogram
+S23,,Knotted cloth,𓋬,,determinative
+S24,Tz,Knotted belt,𓋯,ṯz,phonogram
+S24,Tz,Knotted belt,𓋯,ṯz,phonogram
+S25,,Garment with ties,𓋮,,logogram
+S26,,Apron,𓋯,,logogram
+S27,mnxt,Horizontal strips of cloth,𓋲,mnḫt,logogram
+S28,sfX,Cloth with fringe + S29,𓋴,sfẖ,phonogram
+S29,s,Folded cloth,𓋴,s,phonogram
+S3,HDt,Red crown of Lower Egypt,𓋠,ḥḏt,phonogram
+S30,,Combination of S29 + I9,𓋵,,determinative
+S31,,Combination of S29 + U1,𓋶,,determinative
+S32,,Cloth iwht fringe,𓋷,,determinative
+S33,Tbw,Sandal,𓋸,ṯbw,logogram
+S34,anx,Sandal strap,𓋹,ꜥnḫ,phonogram
+S35,Swt,Sunshade,𓋺,šwt,logogram
+S36,Swt,Var. of S35,𓋼,šwt,logogram
+S37,Swt,R15,R14,šwt,logogram
+S37,Swt,Fan,𓋽,šwt,logogram
+S38,HqA,Crook,𓋾,ḥqꜣ,phonogram
+S38,HqA,Crook,𓋾,ḥqꜣ,phonogram
+S39,awt,Crook,𓋿,ꜥwt,phonogram
+S4,HDt,Combination of S3 + V30,𓋕,ḥḏt,phonogram
+S40,wAs,Scepter with Seth animal,𓌀,wꜣs,phonogram
+S40,wAs,Was scepter,𓌀,wꜣs,phonogram
+S41,wAs,Scepter with spiral shaft and Seth animal,𓌁,wꜣs,phonogram
+S42,xrp,Sekhem scepter,𓌂,ḫrp,phonogram
+S43,mdw,Staff,𓌃,mdw,phonogram
+S44,,Staff with flail,𓌄,,logogram
+S45,nxxw,Flail,𓌅,nḫḫw,logogram
+S5,sxmty,Combination of red and white crown,𓋖,sḫmty,logogram
+S6,sxmty,Combination of S5 + V30,𓋗,sḫmty,logogram
+S7,xprS,Blue Crown,𓋙,ḫprš,logogram
+S8,Atf,Atef crown,𓋚,ꜣtf,logogram
+S9,Swtj,Double plumes,𓋛,šwtj,logogram
+T1,HD,Angular headed mace,𓌇,ḥḏ,phonogram
+T10,pDt,Composite bow,𓌔,pḏt,phonogram
+T11,swnt,Arrow,𓌕,swnt,phonogram
+T12,rwD,Bowstring,𓌗,rwḏ,phonogram
+T13,,Wood tied together,𓌘,,determinative
+T14,qmA,Throw stick,𓌙,qmꜣ,phonogram
+T15,qmA,Var. of T14,𓌚,qmꜣ,phonogram
+T16,xpS,Scimitar,𓌛,ḫpš,phonogram
+T17,,Chariot,𓌝,,logogram
+T18,,Crook with package,𓌍,,determinative
+T19,qn,Bone harpoon head,𓌟,qn,phonogram
+T19,qn,R21,T20,qn,phonogram
+T2,HD,T3 tilted,𓌈,ḥḏ,phonogram
+T20,qn,Var. of T19,𓌠,qn,phonogram
+T21,anx,Harpoon,𓌡,ꜥnḫ,phonogram
+T21,anx,Harpoon,𓌡,ꜥnḫ,phonogram
+T22,Aw,Arrowhead,𓌔,ꜣw,phonogram
+T23,,Var. of T22,𓌣,,determinative
+T24,iHw,Fishing net,𓌤,iḥw,phonogram
+T25,,Reed Float,𓌥,,determinative
+T26,sxt,Bird Trap,𓌦,sḫt,logogram
+T27,,Var. of T26,𓌧,,logogram
+T28,nmt,Butcher’s block,𓌘,nmt,phonogram
+T29,,Combination of T28 + T30,𓌩,,logogram
+T3,HD,Mace with round head,𓌁,ḥḏ,phonogram
+T30,dmt,Knife,𓌪,dmt,logogram
+T31,sm,Knife sharpener,𓌫,sm,phonogram
+T32,,Combination of T31 + D54,𓌬,,determinative
+T33,,Butcher’s knife sharpener,𓌮,,logogram
+T34,,Butcher’s knife,𓌰,,determinative
+T35,,Var. of T34,𓌱,,determinative
+T35,,U29,U28,,determinative
+T4,HD,Var of T3,𓌋,ḥḏ,phonogram
+T5,,Combination of T3 + I10,𓌌,,determinative
+T6,,Combination of T5 + extra I10,𓌍,,determinative
+T7,mA,Axe,𓌎,mꜣ,phonogram
+T7A,mA,Axe,𓌏,mꜣ,phonogram
+T8,sfT,Dagger,𓌐,sfṯ,phonogram
+T8A,sfT,Dagger,𓌑,sfṯ,phonogram
+T9,pDt,Bow,𓌒,pḏt,phonogram
+T9,pDt,T10,T9a,pḏt,phonogram
+T9A,pDt,Var of T9,𓌓,pḏt,phonogram
+U1,mA,Sickle,𓌀,mꜣ,phonogram
+U10,,Combination of U9 + M33,𓌾,,logogram
+U11,,Combination of S38 + U9,𓌿,,logogram
+U12,,Combination of D50 + U9,𓍀,,logogram
+U13,Sna,Plow,𓍁,šnꜥ,phonogram
+U14,mAw,Two branches joined,𓍂,mꜣw,phonogram
+U15,Hnk,Sledge,𓌨,ḥnk,phonogram
+U16,mr,Hoe variant 2,𓍄,mr,phonogram
+U16,mr,Sled with jackal head bearing a load,𓍄,mr,phonogram
+U17,grg,Pick with pool,𓌧,grg,phonogram
+U18,,Var. U17,𓍆,,determinative
+U18,,Aa7,U14,,determinative
+U19,nwt,Adze,𓌩,nwt,phonogram
+U2,mA,Var. of U1,𓌴,mꜣ,phonogram
+U20,nwt,Var. of U19,𓍈,nwt,phonogram
+U21,stp,Adze with wood block,𓌫,stp,phonogram
+U22,mAb,Chisel,𓍊,mꜣb,phonogram
+U23,Abu,Chisel,𓌰,ꜣbu,phonogram
+U24,HmA,Drill for stone,𓍍,ḥmꜣ,logogram
+U25,HmA,Var. of U24,𓍎,ḥmꜣ,logogram
+U26,wbA,Drill for beads,𓍏,wbꜣ,logogram
+U26,wbA,U24,U27,wbꜣ,logogram
+U27,wbA,Var. of U26,𓍐,wbꜣ,logogram
+U28,Df,Fire drill,𓌴,ḏf,phonogram
+U29,Df,Fire drill variant,𓌵,ḏf,phonogram
+U3,mA,Combination of U1 + D4,𓌵,mꜣ,phonogram
+U30,Tnr,Kiln,𓍔,ṯnr,phonogram
+U31,pHrr,Baker’s rake,𓍕,pḥrr,logogram
+U32,ti,Mortar and pestle,𓍖,ti,phonogram
+U33,ti,Pestle,𓌻,ti,phonogram
+U34,xAr,Spindle,𓍙,ḫꜣr,phonogram
+U35,,Combination of U34 + I9,𓍚,,determinative
+U36,Hm,Club used in washing,𓍛,ḥm,phonogram
+U36,Hm,Washing club,𓍛,ḥm,phonogram
+U37,ard,Razor,𓍜,ꜥrd,phonogram
+U38,mxAt,Scale,𓍝,mḫꜣt,logogram
+U39,iwnw,Scale post,𓍞,iwnw,phonogram
+U4,mA,Combination of U1 + Aa11,𓌶,mꜣ,phonogram
+U40,wTs,Var. of U39,𓌿,wṯs,phonogram
+U41,gstj,Plumb bob,𓍠,gstj,phonogram
+U5,mA,Var. of U4,𓌷,mꜣ,phonogram
+U6,mr,Hoe,𓌥,mr,phonogram
+U7,mr,Hoe variant,𓌦,mr,phonogram
+U8,mr,Hoe,𓌼,mr,phonogram
+U9,HqAt,Grain measure with grain streaming outwards,𓌡,ḥqꜣt,phonogram
+V1,Sn,Coil of rope,𓍢,šn,phonogram
+V10,sT,Oval cartouche,𓍫,sṯ,phonogram
+V11,,End of cartouche,𓍸,,determinative
+V12,sS,String,𓍼,sš,phonogram
+V13,t,Tethering rope,𓏏,t,phonogram
+V14,t,Rope variant,𓍪,t,phonogram
+V15,,Combination of V13 and D54,𓍦,,determinative
+V16,sS,Hobble for cattle,𓍬,sš,phonogram
+V17,idr,S34,V18,idr,logogram
+V17,idr,Herdsman’s shelter,𓎃,idr,logogram
+V18,idr,Var. of V17,𓎄,idr,logogram
+V19,mD,Hobble for cattle,𓍯,mḏ,phonogram
+V19,mD,Hobble coil,𓍯,mḏ,phonogram
+V2,Sn,Combination of V1 + O34,𓍣,šn,phonogram
+V20,mD,Hobble for cattle sans crossbar,𓎆,mḏ,phonogram
+V21,mD,Combination of V20 + I10,𓎓,mḏ,phonogram
+V22,mH,Whip,𓎔,mḥ,phonogram
+V23,mH,Whip variant,𓎕,mḥ,phonogram
+V23,mH,Whip variant,𓎕,mḥ,phonogram
+V24,wD,Cord on Stick,𓎗,wḏ,phonogram
+V25,wD,Var. of V24,𓎘,wḏ,phonogram
+V25,wD,S42,U23,wḏ,phonogram
+V26,iAr,Spool with thread,𓎙,iꜣr,phonogram
+V27,iAr,Var. of V26,𓎚,iꜣr,phonogram
+V28,H,Wick,𓎛,ḥ,phonogram
+V29,wD,Swab,𓎜,wḏ,phonogram
+V3,Sn,"Same as V2, but with two additional coils",𓍮,šn,logogram
+V30,nb,Basket,𓎟,nb,phonogram
+V30,nb,Basket,𓎟,nb,phonogram
+V31,k,Basket with handle,𓎡,k,phonogram
+V31A,k,V31 reversed,𓎢,k,phonogram
+V32,ms,Y2,Y1,ms,phonogram
+V32,ms,Wicker satchel,𓎣,ms,phonogram
+V33,ms,V7,V34,ms,phonogram
+V33,ms,Linen bag,𓎤,ms,phonogram
+V34,ms,Var. of V33,𓎥,ms,phonogram
+V35,ms,M41,H8,ms,phonogram
+V35,ms,Var. of V33,𓎧,ms,phonogram
+V36,Hnw,Receptacle,𓎨,ḥnw,phonogram
+V37,idH,Bandage,𓎩,idḥ,logogram
+V38,idH,Bandage,𓎩,idḥ,phonogram
+V39,tA,Tie,𓎬,tꜣ,logogram
+V4,wA,Lasso,𓍥,wꜣ,phonogram
+V5,Sn,Looped rope,𓍰,šn,logogram
+V6,Sr,Cord with loop facing downwards,𓍧,šr,phonogram
+V7,Sn,Cord with loop facing upwards,𓍨,šn,phonogram
+V8,Sn,Rope circle,𓍩,šn,phonogram
+V9,Sn,Round cartouche,𓍶,šn,phonogram
+W1,Hsmn,Alabaster bowl,𓎯,ḥsmn,phonogram
+W10,bAst,Bowl,𓎸,bꜣst,phonogram
+W10A,,Pot,𓎻,,determinative
+W11,g,Ring stand,𓎶,g,phonogram
+W12,nst,Ring stand,𓎽,nst,phonogram
+W13,nst,N41,T28,nst,logogram
+W13,nst,Pot,𓎾,nst,logogram
+W14,Hb,Water jar,𓎼,ḥb,phonogram
+W15,Hb,Tall jar with water,𓎽,ḥb,logogram
+W16,Hb,Combination of W15 + W12,𓎾,ḥb,logogram
+W17,xnt,Tall jars in rack.,𓏀,ḫnt,phonogram
+W18,Xnm,Jars in row,𓏁,ẖnm,phonogram
+W19,mi,Milk jug,𓏂,mi,phonogram
+W2,,Oil jar without ties,𓎰,,determinative
+W20,,Milk jug with leaf,𓏈,,determinative
+W21,irp,Wine jars,𓏉,irp,phonogram
+W22,nw,Beer jugs,𓏃,nw,logogram
+W23,Hzt,Jug with handles,𓏄,ḥzt,logogram
+W24,nw,Bowl,𓏅,nw,phonogram
+W25,ini,Combination of W24 + legs,𓏆,ini,phonogram
+W3,Hsmn,Alabaster basin,𓎱,ḥsmn,logogram
+W4,,Combination of W3 + O22,𓎳,,logogram
+W5,,Combination of W3 + T28,𓎳,,logogram
+W6,,Vessel variant,𓎴,,determinative
+W7,mnhD,Granite bowl,𓎶,mnhḏ,phonogram
+W8,,Var. of W7,𓎷,,determinative
+W9,nwt,Stone jug,𓎷,nwt,phonogram
+X1,t,Small bread loaf,𓏏,t,phonogram
+X2,tA,Tall bread loaf,𓏐,tꜣ,phonogram
+X3,tA,Var. of X2,𓏑,tꜣ,phonogram
+X4,pAt,Round bread,𓏒,pꜣt,phonogram
+X4,pAt,Round bread,𓏒,pꜣt,phonogram
+X5,pAt,Var. of X4,𓏕,pꜣt,phonogram
+X6,,Round loaf with baker’s mark,𓏖,,determinative
+X7,,Half loaf of bread,𓏔,,determinative
+X8,di,Conical bread,𓏕,di,phonogram
+Y1,mDAt,Papyrus scroll,𓏛,mḏꜣt,phonogram
+Y1V,mDAt,Papyrus scroll (vertical),𓏜,mḏꜣt,phonogram
+Y2,mDAt,Scroll tied,𓏜,mḏꜣt,phonogram
+Y3,mnhD,Scribal kit,𓏝,mnhḏ,logogram
+Y4,mnhD,Y4 reversed,𓏞,mnhḏ,logogram
+Y5,mn,Game piece,𓏟,mn,phonogram
+Y6,mn,Game piece,𓏡,mn,logogram
+Y7,bnt,Harp,𓏢,bnt,phonogram
+Y8,sSSt,Sistrum,𓏣,sššt,phonogram
+Z1,,Stroke,𓏤,,determinative
+Z10,,Var. of Z9,𓏵,,determinative
+Z11,ip,Crossed planks,𓏬,ip,phonogram
+Z11,ip,Crossed planks,𓏬,ip,phonogram
+Z2,,Three strokes,𓏥,,determinative
+Z3,,Three Z1 vertical strokes,𓏦,,determinative
+Z3A,,Z2 vertical,𓏫,,determinative
+Z4,y,Two diagonal strokes,𓏧,y,phonogram
+Z4A,y,Two vertical strokes,𓏮,y,phonogram
+Z5,,Diagonal stroke in hieratic,𓏯,,determinative
+Z6,,Hieratic var. of A13 and A14,𓏱,,determinative
+Z6,,T2,F33,,determinative
+Z7,w,From hieratic var. of G43.,𓏩,w,phonogram
+Z8,,Oval,𓏳,,determinative
+Z9,,Crossing lines,𓏭,,determinative
+𓂋,,𓌪,𓂌,,determinative
+𓄣,,𓎶,𓎵,,determinative
+𓄥,,𓏇,𓍠,,determinative
+𓄭,,𓂏,𓂎,,determinative
+𓄲,,𓄶,𓄴,,determinative
+𓆅,,𓆼,𓆳,,determinative
+𓆎,,𓎻,𓎺,,determinative
+𓆩,,𓂐,𓄔,,determinative
+𓇤,,𓏐,𓏑,,determinative
+𓇥,,𓈔,𓄮,,determinative
+𓇩,,𓐫,𓐪,,determinative
+𓇯,,𓈛,𓈙,,determinative
+𓇳,,𓇸,𓇷,,determinative
+𓈇,,𓏘,𓈎,,determinative
+𓉽,,𓍞,𓐣,,determinative
+𓊅,,𓎛,𓐮,,determinative
+𓊏,,𓎂,𓊐,,determinative
+𓊕,,𓍶,𓏖,,determinative
+𓊪,,𓏳,𓊌,,determinative
+𓊹,,𓌏,𓊺,,determinative
+𓋝,,𓇬,𓇽,,determinative
+𓋭,,𓋊,𓋉,,determinative
+𓋽,,𓋁,𓋀,,determinative
+𓋾,,𓌙,𓋿,,determinative
+𓌀,,𓌁,𓋆,,determinative
+𓌒,,𓌔,𓌓,,determinative
+𓌟,,𓋈,𓌠,,determinative
+𓌡,,𓍇,𓍈,,determinative
+𓌱,,𓍒,𓍑,,determinative
+𓍄,,𓈐,𓐦,,determinative
+𓍆,,𓐓,𓍂,,determinative
+𓍏,,𓍍,𓍐,,determinative
+𓍛,,𓌑,𓌐,,determinative
+𓎃,,𓋹,𓎄,,determinative
+𓎅,,𓐎,𓐡,,determinative
+𓎕,,𓊷,𓊶,,determinative
+𓎘,,𓌂,𓍋,,determinative
+𓎟,,𓎢,𓎡,,determinative
+𓎣,,𓏝,𓏛,,determinative
+𓎤,,𓍱,𓎥,,determinative
+𓎧,,𓇫,𓆇,,determinative
+𓎾,,𓈞,𓌨,,determinative
+𓏒,,𓇿,𓏕,,determinative
+𓏱,,𓌈,𓄢,,determinative
+𓏶,,𓐧,𓌄,,determinative
+𓐖,,𓎙,𓐗,,determinative
+𓐙,,𓐛,𓐚,,determinative
+𓐞,,𓏵,𓏴,,determinative
+𓐬,,𓎨,𓐢,,determinative
