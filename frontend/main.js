@@ -21,12 +21,11 @@ function hideLoading(btn) {
 }
 
 function getSentimentEmoji(sentiment) {
-    if (sentiment === 'positive') 
-        return '😊';
-    else if (sentiment === 'negative') 
-        return '😞';
-    else
-        return '😐';
+    if (!sentiment) return '😐';
+    const s = sentiment.toLowerCase();
+    if (s === 'positive') return '😊';
+    else if (s === 'negative') return '😞';
+    else return '😐';
 }
 
 function updateGlyphPreview(glyphStr) {
@@ -67,9 +66,13 @@ function renderExamples() {
         const chip = document.createElement('span');
         chip.className = 'chip';
         chip.title = example.description;
-        chip.textContent = example.codes.join(', ');
+        // backend returns codes as a string e.g. "G17 M18 F34"
+        const codesDisplay = Array.isArray(example.codes)
+            ? example.codes.join(', ')
+            : example.codes;
+        chip.textContent = codesDisplay;
         chip.onclick = () => {
-            document.getElementById('codesInput').value = example.codes.join(', ');
+            document.getElementById('codesInput').value = codesDisplay;
             document.getElementById('codesInput').focus();
         };
         container.appendChild(chip);
@@ -82,14 +85,23 @@ async function decipher() {
         showError('Please enter Gardiner codes'); 
         return; 
     }
-    const codes = input.split(',').map(c => c.trim().toUpperCase()).filter(c => c);
-    if (codes.length === 0) { 
+
+    // Build the gardiner string the backend expects (space-separated, uppercase)
+    const gardiner = input
+        .split(/[\s,]+/)
+        .map(c => c.trim().toUpperCase())
+        .filter(c => c)
+        .join(' ');
+
+    if (!gardiner) { 
         showError('Invalid codes format'); 
         return; 
     }
+
     const btn = document.getElementById('decipherBtn');
     showLoading(btn);
     clearResults();
+
     try {
         const response = await fetch(`${API_BASE}/api/decipher`, {
             method: 'POST',
@@ -97,20 +109,23 @@ async function decipher() {
                 'Content-Type': 'application/json',
                 'ngrok-skip-browser-warning': 'true'
             },
-            body: JSON.stringify({ codes })
+            body: JSON.stringify({ gardiner })   // ✅ field name the backend expects
         });
 
         if (!response.ok) {
-            const error = await response.json();
-            throw new Error(error.error || 'API Error');
+            let errMsg = `HTTP ${response.status}`;
+            try {
+                const error = await response.json();
+                errMsg = error?.error?.message || error?.error || errMsg;
+            } catch (_) {}
+            throw new Error(errMsg);
         }
 
         const result = await response.json();
         if (result.success) {
             renderResults(result.data);
-        } 
-        else {
-            showError(result.error);
+        } else {
+            showError(result.error?.message || result.error || 'Unknown error');
         }
     } catch (e) {
         showError(e.message);
@@ -119,8 +134,7 @@ async function decipher() {
     }
 }
 
-function clearResults() 
-{
+function clearResults() {
     updateGlyphPreview('loading');
     document.getElementById('signTableBody').innerHTML = '';
     const hint = document.getElementById('tableHint');
@@ -134,42 +148,44 @@ function clearResults()
 }
 
 function renderResults(data) {
-    updateGlyphPreview(data.glyphs || '');
+    // No glyphs SVG in the backend response — clear the preview area
+    updateGlyphPreview('');
 
-    document.getElementById('tableHint').style.display = 'none';
-
-    const tbody     = document.getElementById('signTableBody');
-    tbody.innerHTML = '';
-
-    for (let i = 0; i < data.per_sign.length; i++) {
-        const [code, glyph, phonetic, meaning] = data.per_sign[i];
-        const row     = document.createElement('tr');
-        row.innerHTML = `
-            <td><strong>${code.toUpperCase()}</strong></td>
-            <td class="glyph-cell">${glyph || '□'}</td>
-            <td>${phonetic || '(det.)'}</td>
-            <td>${meaning  || '-'}</td>
-        `;
-        tbody.appendChild(row);
+    // Show phonetics / assembled words in the sign table hint area
+    const hint = document.getElementById('tableHint');
+    if (data.spaced_phonetics || data.assembled_words) {
+        hint.style.display = 'block';
+        hint.innerHTML =
+            (data.spaced_phonetics
+                ? `<span class="phonetic-line">🔤 ${data.spaced_phonetics}</span><br>`
+                : '') +
+            (data.assembled_words
+                ? `<span class="assembled-line">📝 ${data.assembled_words}</span>`
+                : '');
+    } else {
+        hint.style.display = 'none';
     }
 
-    const displayEnglish = (data.sentence && data.sentence.length > 0) ? data.sentence : data.english;
-    document.getElementById('englishResult').textContent = displayEnglish || '';
-    document.getElementById('arabicResult').textContent  = data.arabic    || '';
+    // Sign table — backend doesn't return per_sign rows, so hide the table body
+    document.getElementById('signTableBody').innerHTML = '';
+
+    document.getElementById('englishResult').textContent = data.english || '—';
+    document.getElementById('arabicResult').textContent  = data.arabic  || '—';
 
     const emoji = getSentimentEmoji(data.sentiment);
+    const sentScore = data.sent_score ? ` (${data.sent_score})` : '';
     document.getElementById('sentimentResult').innerHTML =
-        `<span class="sent-badge">${emoji} ${data.sentiment} &nbsp; (${data.sent_score})</span>`;
+        `<span class="sent-badge">${emoji} ${data.sentiment || 'Neutral'}${sentScore}</span>`;
 
     document.getElementById('intentionEn').textContent =
         data.intention_en ? `🎯 ${data.intention_en}` : '';
-    document.getElementById('intentionAr').textContent = data.intention_ar || '';
+    document.getElementById('intentionAr').textContent =
+        data.intention_de ? `🎯 ${data.intention_de}` : '';
 }
 
 document.getElementById('decipherBtn').addEventListener('click', decipher);
 document.getElementById('codesInput').addEventListener('keypress', (e) => {
-    if (e.key === 'Enter') 
-        decipher();
+    if (e.key === 'Enter') decipher();
 });
 
 window.addEventListener('DOMContentLoaded', () => {
@@ -178,12 +194,13 @@ window.addEventListener('DOMContentLoaded', () => {
 });
 
 function setInitialHints() {
-    document.getElementById('englishResult').innerHTML   =
+    document.getElementById('englishResult').innerHTML =
         '<span class="card-hint">press Decipher to reveal the translation</span>';
-    document.getElementById('arabicResult').innerHTML    =
+    document.getElementById('arabicResult').innerHTML =
         '<span class="card-hint">اضغط Decipher لعرض الترجمة</span>';
     document.getElementById('sentimentResult').innerHTML =
         '<span class="card-hint">press Decipher to analyse the tone</span>';
-    document.getElementById('intentionEn').innerHTML     =
+    document.getElementById('intentionEn').innerHTML =
         '<span class="card-hint">press Decipher to detect intention</span>';
+    document.getElementById('intentionAr').innerHTML = '';
 }
