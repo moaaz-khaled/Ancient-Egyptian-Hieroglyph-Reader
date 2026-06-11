@@ -1,206 +1,238 @@
-// const API_BASE = 'http://localhost:5000';
-const API_BASE = 'https://irretrievably-unsimpering-darrin.ngrok-free.dev';
+/* ════════════════════════════════════════════════════════════════════════
+   HIEROGLYPH PIPELINE — frontend logic
+   Image  →  POST /api/analyze  →  image + EN + AR + sentiment + intention
+   ════════════════════════════════════════════════════════════════════════ */
 
-let examples = {};
+/* 👇 الـ URL الافتراضي = نفس الدومين الثابت اللي في النوتبوك.
+   لو ngrok طلّع URL مختلف، غيّره هنا أو من خانة "Backend" فوق في الموقع. */
+const DEFAULT_API_BASE = 'https://irretrievably-unsimpering-darrin.ngrok-free.dev';
 
-function showError(message) {
-    const box = document.getElementById('errorBox');
-    box.textContent = `❌ Error: ${message}`;
-    box.classList.remove('hidden');
-    setTimeout(() => box.classList.add('hidden'), 5000);
+const NGROK_HEADERS = { 'ngrok-skip-browser-warning': 'true' };
+const RITUAL_STAGES = 6;
+const STAGE_MS      = 850;   // وقت كل مرحلة في الـ animation
+const MIN_RITUAL_MS = 2200;  // أقل وقت يظهر فيه الـ loading عشان الإحساس يبقى حلو
+
+/* ── elements ─────────────────────────────────────────────────────────── */
+const $ = (id) => document.getElementById(id);
+const fileInput   = $('fileInput');
+const dropZone    = $('dropZone');
+const dropPrompt  = $('dropPrompt');
+const previewWrap = $('previewWrap');
+const dropPreview = $('dropPreview');
+const analyzeBtn  = $('analyzeBtn');
+const confSlider  = $('confSlider');
+const confVal     = $('confVal');
+const ritual      = $('ritual');
+const results     = $('results');
+const errorBox    = $('errorBox');
+const errorMsg    = $('errorMsg');
+const backendUrl  = $('backendUrl');
+const backendDot  = $('backendDot');
+
+let selectedFile = null;
+let ritualTimer  = null;
+
+/* ── backend URL (persisted) ──────────────────────────────────────────── */
+function getApiBase() {
+    return (backendUrl.value || DEFAULT_API_BASE).trim().replace(/\/+$/, '');
 }
-
-function showLoading(btn) {
-    btn.disabled = true;
-    btn.innerHTML = '<span class="spinner"></span> Processing...';
+function loadSavedBackend() {
+    let saved = '';
+    try { saved = localStorage.getItem('hp_backend') || ''; } catch (_) {}
+    backendUrl.value = saved || DEFAULT_API_BASE;
 }
-
-function hideLoading(btn) {
-    btn.disabled = false;
-    btn.innerHTML = '⟡ &nbsp; Decipher';
-}
-
-function getSentimentEmoji(sentiment) {
-    if (!sentiment) return '😐';
-    const s = sentiment.toLowerCase();
-    if (s === 'positive') return '😊';
-    else if (s === 'negative') return '😞';
-    else return '😐';
-}
-
-function updateGlyphPreview(glyphStr) {
-    const box   = document.getElementById('glyphPreviewBox');
-    const inner = document.getElementById('glyphPreviewGlyphs');
-    if (glyphStr === 'loading') {
-        inner.innerHTML = '<span class="glyph-preview-placeholder">Loading<span class="loading-dots"></span></span>';
-        box.classList.remove('active');
-    } 
-    else if (glyphStr && glyphStr.trim()) {
-        inner.innerHTML = glyphStr;
-        box.classList.add('active');
-    } 
-    else {
-        inner.innerHTML = '<span class="glyph-preview-placeholder">Enter codes and press Decipher to reveal glyphs</span>';
-        box.classList.remove('active');
-    }
-}
-
-async function loadExamples() {
-    try {
-        const response = await fetch(`${API_BASE}/api/examples`, {
-            headers: { 'ngrok-skip-browser-warning': 'true' }
-        });
-        const data = await response.json();
-        examples = data;
-        renderExamples();
-    } catch (e) {
-        console.warn('Could not load examples:', e);
-        document.getElementById('examplesContainer').innerHTML = '';
-    }
-}
-
-function renderExamples() {
-    const container = document.getElementById('examplesContainer');
-    container.innerHTML = '';
-    for (const [key, example] of Object.entries(examples)) {
-        const chip = document.createElement('span');
-        chip.className = 'chip';
-        chip.title = example.description;
-        // backend returns codes as a string e.g. "G17 M18 F34"
-        const codesDisplay = Array.isArray(example.codes)
-            ? example.codes.join(', ')
-            : example.codes;
-        chip.textContent = codesDisplay;
-        chip.onclick = () => {
-            document.getElementById('codesInput').value = codesDisplay;
-            document.getElementById('codesInput').focus();
-        };
-        container.appendChild(chip);
-    }
-}
-
-async function decipher() {
-    const input = document.getElementById('codesInput').value.trim();
-    if (!input) { 
-        showError('Please enter Gardiner codes'); 
-        return; 
-    }
-
-    // Build the gardiner string the backend expects (space-separated, uppercase)
-    const gardiner = input
-        .split(/[\s,]+/)
-        .map(c => c.trim().toUpperCase())
-        .filter(c => c)
-        .join(' ');
-
-    if (!gardiner) { 
-        showError('Invalid codes format'); 
-        return; 
-    }
-
-    const btn = document.getElementById('decipherBtn');
-    showLoading(btn);
-    clearResults();
-
-    try {
-        const response = await fetch(`${API_BASE}/api/decipher`, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'ngrok-skip-browser-warning': 'true'
-            },
-            body: JSON.stringify({ gardiner })   // ✅ field name the backend expects
-        });
-
-        if (!response.ok) {
-            let errMsg = `HTTP ${response.status}`;
-            try {
-                const error = await response.json();
-                errMsg = error?.error?.message || error?.error || errMsg;
-            } catch (_) {}
-            throw new Error(errMsg);
-        }
-
-        const result = await response.json();
-        if (result.success) {
-            renderResults(result.data);
-        } else {
-            showError(result.error?.message || result.error || 'Unknown error');
-        }
-    } catch (e) {
-        showError(e.message);
-    } finally {
-        hideLoading(btn);
-    }
-}
-
-function clearResults() {
-    updateGlyphPreview('loading');
-    document.getElementById('signTableBody').innerHTML = '';
-    const hint = document.getElementById('tableHint');
-    hint.style.display = 'block';
-    hint.textContent   = 'Loading...';
-    document.getElementById('englishResult').textContent  = '';
-    document.getElementById('arabicResult').textContent   = '';
-    document.getElementById('sentimentResult').innerHTML  = '';
-    document.getElementById('intentionEn').textContent    = '';
-    document.getElementById('intentionAr').textContent    = '';
-}
-
-function renderResults(data) {
-    // No glyphs SVG in the backend response — clear the preview area
-    updateGlyphPreview('');
-
-    // Show phonetics / assembled words in the sign table hint area
-    const hint = document.getElementById('tableHint');
-    if (data.spaced_phonetics || data.assembled_words) {
-        hint.style.display = 'block';
-        hint.innerHTML =
-            (data.spaced_phonetics
-                ? `<span class="phonetic-line">🔤 ${data.spaced_phonetics}</span><br>`
-                : '') +
-            (data.assembled_words
-                ? `<span class="assembled-line">📝 ${data.assembled_words}</span>`
-                : '');
-    } else {
-        hint.style.display = 'none';
-    }
-
-    // Sign table — backend doesn't return per_sign rows, so hide the table body
-    document.getElementById('signTableBody').innerHTML = '';
-
-    document.getElementById('englishResult').textContent = data.english || '—';
-    document.getElementById('arabicResult').textContent  = data.arabic  || '—';
-
-    const emoji = getSentimentEmoji(data.sentiment);
-    const sentScore = data.sent_score ? ` (${data.sent_score})` : '';
-    document.getElementById('sentimentResult').innerHTML =
-        `<span class="sent-badge">${emoji} ${data.sentiment || 'Neutral'}${sentScore}</span>`;
-
-    document.getElementById('intentionEn').textContent =
-        data.intention_en ? `🎯 ${data.intention_en}` : '';
-    document.getElementById('intentionAr').textContent =
-        data.intention_de ? `🎯 ${data.intention_de}` : '';
-}
-
-document.getElementById('decipherBtn').addEventListener('click', decipher);
-document.getElementById('codesInput').addEventListener('keypress', (e) => {
-    if (e.key === 'Enter') decipher();
+backendUrl.addEventListener('change', () => {
+    try { localStorage.setItem('hp_backend', backendUrl.value.trim()); } catch (_) {}
+    pingBackend();
 });
 
+async function pingBackend() {
+    backendDot.className = 'backend-dot';
+    try {
+        const res = await fetch(`${getApiBase()}/api/health`, { headers: NGROK_HEADERS });
+        backendDot.className = res.ok ? 'backend-dot ok' : 'backend-dot bad';
+    } catch (_) {
+        backendDot.className = 'backend-dot bad';
+    }
+}
+
+/* ── confidence slider ────────────────────────────────────────────────── */
+confSlider.addEventListener('input', () => {
+    const v = confSlider.value;
+    confVal.textContent = (v / 100).toFixed(2);
+    confSlider.style.setProperty('--pct', v);
+});
+
+/* ── drag & drop / file pick ──────────────────────────────────────────── */
+dropZone.addEventListener('dragover',  (e) => { e.preventDefault(); dropZone.classList.add('over'); });
+dropZone.addEventListener('dragleave', ()  => dropZone.classList.remove('over'));
+dropZone.addEventListener('drop', (e) => {
+    e.preventDefault();
+    dropZone.classList.remove('over');
+    if (e.dataTransfer.files[0]) setFile(e.dataTransfer.files[0]);
+});
+fileInput.addEventListener('change', () => {
+    if (fileInput.files[0]) setFile(fileInput.files[0]);
+});
+
+function setFile(f) {
+    if (!f.type.startsWith('image/')) { showError('Please choose an image file.'); return; }
+    selectedFile = f;
+    analyzeBtn.disabled = false;
+    dropPreview.src = URL.createObjectURL(f);
+    previewWrap.style.display = 'block';
+    dropPrompt.style.display  = 'none';
+    hideError();
+    results.classList.remove('active');
+}
+
+/* ── the decipherment ritual (loading) ────────────────────────────────── */
+function stages() { return [...ritual.querySelectorAll('.stage')]; }
+
+function resetRitual() {
+    stages().forEach((s) => s.classList.remove('active', 'done'));
+}
+function startRitual() {
+    resetRitual();
+    ritual.classList.add('active');
+    dropZone.classList.add('reading');
+    let i = 0;
+    const list = stages();
+    list[0].classList.add('active');
+    ritualTimer = setInterval(() => {
+        if (i < RITUAL_STAGES - 1) {
+            list[i].classList.remove('active');
+            list[i].classList.add('done');
+            i++;
+            list[i].classList.add('active');
+        }
+        // آخر مرحلة بتفضل تنبض لحد ما الرد يوصل
+    }, STAGE_MS);
+}
+function stopRitual() {
+    clearInterval(ritualTimer);
+    stages().forEach((s) => { s.classList.remove('active'); s.classList.add('done'); });
+    dropZone.classList.remove('reading');
+    setTimeout(() => ritual.classList.remove('active'), 450);
+}
+
+/* ── analyse ──────────────────────────────────────────────────────────── */
+analyzeBtn.addEventListener('click', runAnalysis);
+
+async function runAnalysis() {
+    if (!selectedFile) return;
+    hideError();
+    results.classList.remove('active');
+    analyzeBtn.disabled = true;
+    startRitual();
+    const startedAt = Date.now();
+
+    const fd = new FormData();
+    fd.append('image', selectedFile);
+    fd.append('conf_thresh', (confSlider.value / 100).toFixed(2));
+
+    try {
+        const res = await fetch(`${getApiBase()}/api/analyze`, {
+            method: 'POST',
+            headers: NGROK_HEADERS,           // ملحوظة: مفيش Content-Type — المتصفح بيظبطه للـ FormData
+            body: fd,
+        });
+
+        let payload;
+        try { payload = await res.json(); }
+        catch (_) { throw new Error(`Bad response (HTTP ${res.status}).`); }
+
+        if (!res.ok || !payload.success) {
+            throw new Error(payload?.error?.message || payload?.error || `HTTP ${res.status}`);
+        }
+
+        // خلّي الـ loading يكمّل أقل مدة لطيفة قبل ما يبان النتيجة
+        const wait = Math.max(0, MIN_RITUAL_MS - (Date.now() - startedAt));
+        setTimeout(() => { stopRitual(); renderResults(payload.data); }, wait);
+        backendDot.className = 'backend-dot ok';
+
+    } catch (err) {
+        stopRitual();
+        showError(err.message || 'Network error.');
+        backendDot.className = 'backend-dot bad';
+    } finally {
+        analyzeBtn.disabled = false;
+    }
+}
+
+/* ── render ───────────────────────────────────────────────────────────── */
+function sentimentClass(label) {
+    const s = (label || '').toLowerCase();
+    if (s === 'positive') return 'positive';
+    if (s === 'negative') return 'negative';
+    return 'neutral';
+}
+function sentimentEmoji(label) {
+    const s = (label || '').toLowerCase();
+    if (s === 'positive') return '😊';
+    if (s === 'negative') return '😞';
+    return '😐';
+}
+function titleCase(str) {
+    return (str || '').replace(/_/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase());
+}
+function pct(x) { return `${Math.round((x || 0) * 100)}%`; }
+
+function renderResults(d) {
+    // 1) the returned image (original — no boxes/boundaries)
+    $('resultImg').src = d.image || '';
+
+    // 2) sign-count badge + reading direction
+    const n   = d.n_signs || 0;
+    const dir = d.direction ? ` · ${d.direction.toUpperCase()}` : '';
+    $('signBadge').textContent =
+        n === 0 ? 'no glyphs found' : `${n} sign${n === 1 ? '' : 's'}${dir}`;
+
+    // 3) English + Arabic
+    $('englishResult').textContent = d.english || '—';
+    $('arabicResult').textContent  = d.arabic  || '—';
+
+    // 4) sentiment badge
+    const label = d.sentiment || 'Neutral';
+    $('sentimentResult').innerHTML =
+        `<span class="badge ${sentimentClass(label)}">${sentimentEmoji(label)} ${label}` +
+        `<span class="badge-pct">${pct(d.sent_confidence)}</span></span>`;
+
+    // 5) intention (EN label + Arabic + confidence + ambiguity flag)
+    const amb = d.intent_ambiguous ? ' <span class="intent-amb">⚠︎</span>' : '';
+    $('intentionEn').innerHTML = d.intention_en
+        ? `🎯 ${titleCase(d.intention_en)} <span class="badge-pct">(${pct(d.intent_confidence)})</span>${amb}`
+        : '—';
+    $('intentionAr').textContent = d.intention_ar || '';
+
+    results.classList.add('active');
+    results.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+/* ── error helpers ────────────────────────────────────────────────────── */
+function showError(msg) {
+    errorMsg.textContent = msg;
+    errorBox.classList.add('show');
+}
+function hideError() { errorBox.classList.remove('show'); }
+
+/* ── keyboard: Enter on the drop zone opens the picker ────────────────── */
+dropZone.setAttribute('tabindex', '0');
+dropZone.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); fileInput.click(); }
+});
+
+/* ── init ─────────────────────────────────────────────────────────────── */
 window.addEventListener('DOMContentLoaded', () => {
-    loadExamples();
+    loadSavedBackend();
+    pingBackend();
     setInitialHints();
 });
 
 function setInitialHints() {
-    document.getElementById('englishResult').innerHTML =
-        '<span class="card-hint">press Decipher to reveal the translation</span>';
-    document.getElementById('arabicResult').innerHTML =
-        '<span class="card-hint">اضغط Decipher لعرض الترجمة</span>';
-    document.getElementById('sentimentResult').innerHTML =
-        '<span class="card-hint">press Decipher to analyse the tone</span>';
-    document.getElementById('intentionEn').innerHTML =
-        '<span class="card-hint">press Decipher to detect intention</span>';
-    document.getElementById('intentionAr').innerHTML = '';
+    $('englishResult').innerHTML  = '<span class="hint">upload a photo and press Decipher</span>';
+    $('arabicResult').innerHTML   = '<span class="hint">ارفع صورة واضغط Decipher</span>';
+    $('sentimentResult').innerHTML = '<span class="hint">tone appears after deciphering</span>';
+    $('intentionEn').innerHTML    = '<span class="hint">intention appears after deciphering</span>';
+    $('intentionAr').textContent  = '';
 }

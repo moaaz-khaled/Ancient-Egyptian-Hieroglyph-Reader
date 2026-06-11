@@ -3,79 +3,156 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hieroglyph NLP Pipeline</title>
+    <title>Hieroglyph Pipeline — Decipher a Stela</title>
     <link rel="icon" type="image/png" href="/Design/icon.png">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="wrap">
-        <div class="hero">
-            <div class="glyphs-deco">𓂀 𓇳 𓅓 𓈖 𓂋</div>
-            <h1>Hieroglyph NLP Pipeline</h1>
-            <p class="subtitle">Transliteration · Translation · Sentiment · Intention</p>
-        </div>
+
+        <!-- ── Header ───────────────────────────────────────────────── -->
+        <header class="hero">
+            <div class="hero-glyphs">𓂀 𓇳 𓅓 𓈖 𓂋 𓋹</div>
+            <h1>Hieroglyph Pipeline</h1>
+            <p class="subtitle">Image · Translation · Sentiment · Intention</p>
+        </header>
+
         <div class="divider"></div>
 
-        <div id="errorBox" class="error hidden"></div>
-
-        <div class="input-section">
-            <div class="input-label">Gardiner Codes</div>
-            <input class="input-box" id="codesInput" type="text" placeholder="e.g. G17, N35, D21" />
-            <div class="examples" id="examplesContainer">
-                <span class="chip">Loading examples...</span>
-            </div>
-            <button class="btn" id="decipherBtn">
-                ⟡ &nbsp; Decipher
-            </button>
+        <!-- ── Backend URL bar ──────────────────────────────────────── -->
+        <div class="backend-bar">
+            <span class="backend-dot" id="backendDot" title="backend status"></span>
+            <label for="backendUrl">Backend</label>
+            <input id="backendUrl" type="text" spellcheck="false"
+                   placeholder="https://your-ngrok-url.ngrok-free.dev" />
         </div>
 
-        <div class="glyph-preview-box" id="glyphPreviewBox">
-            <div class="glyph-preview-glyphs" id="glyphPreviewGlyphs">
-                <span class="glyph-preview-placeholder">Enter codes and press Decipher to reveal glyphs</span>
+        <!-- ── Error banner ─────────────────────────────────────────── -->
+        <div class="error" id="errorBox">
+            <span>⚠</span><span id="errorMsg"></span>
+        </div>
+
+        <!-- ── Upload card ──────────────────────────────────────────── -->
+        <div class="card">
+            <div class="card-eyebrow">Upload an inscription</div>
+
+            <div class="drop" id="dropZone">
+                <input type="file" id="fileInput" accept=".jpg,.jpeg,.png,.webp,.bmp">
+                <div class="drop-preview-wrap" id="previewWrap">
+                    <img class="drop-preview" id="dropPreview" alt="selected inscription">
+                    <div class="scan-beam"></div>
+                </div>
+                <div id="dropPrompt">
+                    <span class="drop-icon">𓋹</span>
+                    <p class="drop-text">Drop a hieroglyph photo here, or click to browse</p>
+                    <p class="drop-sub">JPG · PNG · WEBP · BMP</p>
+                </div>
+            </div>
+
+            <div class="controls">
+                <div class="control">
+                    <label for="confSlider">Detection sensitivity</label>
+                    <div class="slider-wrap">
+                        <input type="range" id="confSlider" min="5" max="90" value="25" style="--pct:25">
+                        <span class="slider-val" id="confVal">0.25</span>
+                    </div>
+                </div>
+                <button class="btn" id="analyzeBtn" disabled>⟡&nbsp; Decipher the Stela</button>
+            </div>
+
+            <!-- ── Decipherment ritual (loading) ────────────────────── -->
+            <div class="ritual" id="ritual">
+                <div class="ritual-title">Reading the stela<span class="loading-dots"></span></div>
+
+                <div class="stage" data-stage="0">
+                    <div class="stage-ring">𓊪</div>
+                    <div class="stage-body">
+                        <span class="stage-name">Layout</span>
+                        <span class="stage-sub">Mapping the inscription lines</span>
+                    </div>
+                    <span class="stage-mark">✓</span>
+                </div>
+                <div class="stage" data-stage="1">
+                    <div class="stage-ring">𓂀</div>
+                    <div class="stage-body">
+                        <span class="stage-name">Detection</span>
+                        <span class="stage-sub">Spotting every glyph</span>
+                    </div>
+                    <span class="stage-mark">✓</span>
+                </div>
+                <div class="stage" data-stage="2">
+                    <div class="stage-ring">𓏏</div>
+                    <div class="stage-body">
+                        <span class="stage-name">Classification</span>
+                        <span class="stage-sub">Naming the signs · Gardiner codes</span>
+                    </div>
+                    <span class="stage-mark">✓</span>
+                </div>
+                <div class="stage" data-stage="3">
+                    <div class="stage-ring">𓎟</div>
+                    <div class="stage-body">
+                        <span class="stage-name">Reading order</span>
+                        <span class="stage-sub">Restoring the scribe's sequence</span>
+                    </div>
+                    <span class="stage-mark">✓</span>
+                </div>
+                <div class="stage" data-stage="4">
+                    <div class="stage-ring">𓂋</div>
+                    <div class="stage-body">
+                        <span class="stage-name">Translation</span>
+                        <span class="stage-sub">German → English &amp; Arabic</span>
+                    </div>
+                    <span class="stage-mark">✓</span>
+                </div>
+                <div class="stage" data-stage="5">
+                    <div class="stage-ring">𓋹</div>
+                    <div class="stage-body">
+                        <span class="stage-name">Interpretation</span>
+                        <span class="stage-sub">Sensing tone &amp; intention</span>
+                    </div>
+                    <span class="stage-mark">✓</span>
+                </div>
             </div>
         </div>
 
-        <div class="results-section">
-            <div class="result-card full">
-                <div class="card-label">Sign Analysis</div>
-                <table class="sign-table" id="signTable">
-                    <thead>
-                        <tr>
-                            <th>Code</th>
-                            <th>Glyph</th>
-                            <th>Phonetic</th>
-                            <th>Meaning</th>
-                        </tr>
-                    </thead>
-                    <tbody id="signTableBody"></tbody>
-                </table>
-                <div class="table-hint" id="tableHint">Press Decipher to analyse signs</div>
+        <!-- ── Results ──────────────────────────────────────────────── -->
+        <div class="results" id="results">
+
+            <div class="stela">
+                <div class="stela-head">
+                    <span class="stela-label">The Inscription</span>
+                    <span class="stela-badge" id="signBadge">—</span>
+                </div>
+                <img id="resultImg" src="" alt="deciphered inscription">
             </div>
 
-            <div class="results-grid">
+            <div class="grid">
                 <div class="result-card">
-                    <div class="card-label">English Translation</div>
-                    <div class="card-value" id="englishResult"></div>
+                    <div class="result-label">English Translation</div>
+                    <div class="result-value" id="englishResult"></div>
                 </div>
                 <div class="result-card">
-                    <div class="card-label">Arabic Translation · الترجمة العربية</div>
-                    <div class="card-value ar" id="arabicResult"></div>
+                    <div class="result-label">الترجمة العربية · Arabic</div>
+                    <div class="result-value ar" id="arabicResult"></div>
                 </div>
                 <div class="result-card">
-                    <div class="card-label">Sentiment Analysis</div>
+                    <div class="result-label">Sentiment</div>
                     <div id="sentimentResult"></div>
                 </div>
                 <div class="result-card">
-                    <div class="card-label">Intention · النية</div>
+                    <div class="result-label">Intention · النية</div>
                     <div class="intent-en" id="intentionEn"></div>
                     <div class="intent-ar" id="intentionAr"></div>
                 </div>
             </div>
+
         </div>
 
         <div class="divider"></div>
-        <div class="footer">𓏤 · Ancient Egyptian NLP · Gardiner Sign List · Seed-X · RoBERTa · 𓏤</div>
+        <div class="footer"><span class="glyph-font">𓏤</span> · Ancient Egyptian NLP · YOLO11m · ConvNeXt CVV · NLLB · Seed-X · <span class="glyph-font">𓏤</span></div>
+
     </div>
+
     <script src="main.js"></script>
 </body>
 </html>
