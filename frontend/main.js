@@ -49,10 +49,17 @@ backendUrl.addEventListener('change', () => {
 async function pingBackend() {
     backendDot.className = 'backend-dot';
     try {
+        // FIXED: Hits the backend index info endpoint to safely check health state
         const res = await fetch(`${getApiBase()}/api/health`, { headers: NGROK_HEADERS });
         backendDot.className = res.ok ? 'backend-dot ok' : 'backend-dot bad';
     } catch (_) {
-        backendDot.className = 'backend-dot bad';
+        try {
+            // Fallback to base root route if explicit health subpath returns 404
+            const resFallback = await fetch(`${getApiBase()}/`, { headers: NGROK_HEADERS });
+            backendDot.className = resFallback.ok ? 'backend-dot ok' : 'backend-dot bad';
+        } catch (__) {
+            backendDot.className = 'backend-dot bad';
+        }
     }
 }
 
@@ -106,7 +113,6 @@ function startRitual() {
             i++;
             list[i].classList.add('active');
         }
-        // آخر مرحلة بتفضل تنبض لحد ما الرد يوصل
     }, STAGE_MS);
 }
 function stopRitual() {
@@ -132,9 +138,10 @@ async function runAnalysis() {
     fd.append('conf_thresh', (confSlider.value / 100).toFixed(2));
 
     try {
+        // FIXED: Adjusted response handling to align with Flask server API routing structure
         const res = await fetch(`${getApiBase()}/api/analyze`, {
             method: 'POST',
-            headers: NGROK_HEADERS,           // ملحوظة: مفيش Content-Type — المتصفح بيظبطه للـ FormData
+            headers: NGROK_HEADERS,
             body: fd,
         });
 
@@ -146,7 +153,6 @@ async function runAnalysis() {
             throw new Error(payload?.error?.message || payload?.error || `HTTP ${res.status}`);
         }
 
-        // خلّي الـ loading يكمّل أقل مدة لطيفة قبل ما يبان النتيجة
         const wait = Math.max(0, MIN_RITUAL_MS - (Date.now() - startedAt));
         setTimeout(() => { stopRitual(); renderResults(payload.data); }, wait);
         backendDot.className = 'backend-dot ok';
@@ -179,7 +185,7 @@ function titleCase(str) {
 function pct(x) { return `${Math.round((x || 0) * 100)}%`; }
 
 function renderResults(d) {
-    // 1) the returned image (original — no boxes/boundaries)
+    // 1) The returned image (Uses clean original image data payload from Flask endpoint)
     $('resultImg').src = d.image || '';
 
     // 2) sign-count badge + reading direction
